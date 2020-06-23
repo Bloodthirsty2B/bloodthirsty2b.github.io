@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>01-前后端概念,php基本语法,前后端交互get&amp;post | BS2B&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Ajax  - 前后端的交互技术">
+<meta name="keywords" content="js,Ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01-前后端概念,php基本语法,前后端交互get&amp;post">
+<meta property="og:url" content="http://bloodthirsty2b.github.io/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/index.html">
+<meta property="og:site_name" content="BS2B&#39;s blog">
+<meta property="og:description" content="Ajax  - 前后端的交互技术">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://bloodthirsty2b.github.io/images/js/Ajax/cs.png">
+<meta property="og:image" content="http://bloodthirsty2b.github.io/images/js/Ajax/dns.png">
+<meta property="og:image" content="http://bloodthirsty2b.github.io/images/js/Ajax/host.png">
+<meta property="og:updated_time" content="2019-11-01T02:48:45.211Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01-前后端概念,php基本语法,前后端交互get&amp;post">
+<meta name="twitter:description" content="Ajax  - 前后端的交互技术">
+<meta name="twitter:image" content="http://bloodthirsty2b.github.io/images/js/Ajax/cs.png">
+  
+    <link rel="alternate" href="/atom.xml" title="BS2B&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BS2B&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">YES!It worked!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bloodthirsty2b.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ajax/01-前后端概念-php基本语法-前后端交互get-post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/" class="article-date">
+  <time datetime="2019-11-01T02:32:00.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      01-前后端概念,php基本语法,前后端交互get&amp;post
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Ajax-前后端的交互技术"><a href="#Ajax-前后端的交互技术" class="headerlink" title="Ajax  - 前后端的交互技术"></a>Ajax  - 前后端的交互技术</h1><a id="more"></a>
+
+<h2 id="服务器软件"><a href="#服务器软件" class="headerlink" title="服务器软件"></a>服务器软件</h2><blockquote>
+<p>使计算机具备提供某种服务能力的应用软件，称为服务器软件，<br>通过安装相应的服务软件，然后进行配置后就可以使计算具备了提供某种服务的能力。</p>
+</blockquote>
+<p>常见的服务器软件： <code>Apache服务器</code>、Nginx 服务器、IIS服务器、Tomcat服务器、 Node服务器等；</p>
+<h2 id="web服务器"><a href="#web服务器" class="headerlink" title="web服务器"></a>web服务器</h2><p>即(web服务器)网站服务器，主要提供文档(文本、图片、视频、音频)浏览服务，一般安装Apache、Nginx服务器软件。</p>
+<p>服务器可以结合某一编程语言处理业务逻辑，由此进行的开发，通常称之为<strong>服务端开发</strong>。 </p>
+<p>常见后台开发的编程语言有： <code>php</code>、java、.net、Python、Ruby、Perl。</p>
+<h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><blockquote>
+<p>具有向服务器<strong>索取服务</strong>能力的终端，叫做客户端。</p>
+</blockquote>
+<ul>
+<li>客户端：电脑、平板、手机安装了客户端软件，就可以称为客户端</li>
+<li>客户端：安装客户端软件，<strong>索取服务</strong>的计算机</li>
+<li>服务器：安装服务器软件，<strong>提供服务</strong>的计算机</li>
+</ul>
+<h2 id="客户端软件"><a href="#客户端软件" class="headerlink" title="客户端软件"></a>客户端软件</h2><p>对于前端工程师而言，主要接触到的客户端软件就是<strong>浏览器</strong>。</p>
+<p>以浏览器为宿主环境，结合 HTML、CSS、Javascript等技术，而进行的一系列开发，通常称之为<strong>前端开发</strong>。</p>
+<h2 id="服务器与客户端的关系"><a href="#服务器与客户端的关系" class="headerlink" title="服务器与客户端的关系"></a>服务器与客户端的关系</h2><p><img src="/images/js/Ajax/cs.png" alt></p>
+<blockquote>
+<p>在浏览器中展示的所有的资源， 都是存放在服务器中的， 当客户端向服务器发送请求后，服务器会将资源返回给浏览器进行渲染；</p>
+</blockquote>
+<h1 id="动态网页与静态网页"><a href="#动态网页与静态网页" class="headerlink" title="动态网页与静态网页"></a>动态网页与静态网页</h1><ul>
+<li>静态网页：使用浏览器端语言进行编程，网站由静态代码（HTML.CSS,JS）组成。用户请求服务器上已经存在的页面，不需要进行业务逻辑的处理。 </li>
+</ul>
+<ul>
+<li>动态网站 ：网页通过服务器的程序动态生成。用户可以和服务器进行交互（可以根据用户输入的不同信息，返回不同的运行结果），可以处理复杂的业务逻辑。</li>
+</ul>
+<h1 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h1><h2 id="ip地址"><a href="#ip地址" class="headerlink" title="ip地址"></a>ip地址</h2><p>所谓IP地址就是给每个连接在互联网上的主机分配的一个32位地址。(就像每个人的身份证号码一样)</p>
+<p>通过ip就可以找到具体的某一台计算机。</p>
+<p>例 <code>192.168.1.110</code></p>
+<p>弊端：没有规律，不方便记忆和推广</p>
+<p>查看本机IP地址 <code>ping</code>、<code>ipconfig</code></p>
+<p><strong>两种特殊的IP地址：</strong></p>
+<p><strong>127.0.0.1</strong>作为本地测试的IP地址。本机测试时，客户端与服务器都安装在本地计算机上，数据无需任何网络传输。</p>
+<p>192.168开头为局域网的地址。</p>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>由于IP地址基于数字，不方便记忆，于是便用域名来代替IP地址，域名是一个IP地址的“好记的名字”</p>
+<p>查看域名对应的IP地址 <code>ping</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping jd.com  <span class="comment">// 可以获取到京东的ip</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>特殊的域名</strong></p>
+<p>​    <code>localhost</code>，意思为本地主机。这是一个保留域名，主要用于本地测试，对应IP地址为<code>127.0.0.1</code>。</p>
+<h2 id="DNS服务器"><a href="#DNS服务器" class="headerlink" title="DNS服务器"></a>DNS服务器</h2><p>DNS（Domain Name System）因特网上作为域名和IP地址相互映射的一个分布式数据库， 能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。</p>
+<p>简单的说就是用于记录IP地址和域名之间的对应关系。</p>
+<p>查找优先级 本机hosts文件、DNS服务器</p>
+<p>ipconfig /flushdns 刷新DNS</p>
+<p><img src="/images/js/Ajax/dns.png" alt></p>
+<h2 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h2><p>端口号是计算机与外界通讯交流的出入口，每个端口对应不同的服务。</p>
+<p>查看端口占用情况 netstat -an</p>
+<p>常见端口号 80、3306、21  </p>
+<h2 id="本地hosts"><a href="#本地hosts" class="headerlink" title="本地hosts"></a>本地hosts</h2><blockquote>
+<p>Hosts是一个没有扩展名的系统文件，可以用记事本等工具打开，其作用就是将一些常用的网址域名与其对应的IP地址建立一个关联“数据库”，当用户在浏览器中输入一个需要登录的网址时，系统会<strong>首先自动从Hosts文件中寻找对应的IP地址</strong>，一旦找到，系统会立即打开对应网页，如果没有找到，则系统会再将网址提交DNS域名解析服务器进行IP地址的解析。</p>
+</blockquote>
+<p>hosts文件的地址：C:\Windows\System32\drivers\etc</p>
+<p><img src="/images/js/Ajax/host.png" alt></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//hosts文件内容</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> localhost</span><br></pre></td></tr></table></figure>
+
+<h1 id="PHP基础"><a href="#PHP基础" class="headerlink" title="PHP基础"></a>PHP基础</h1><p><strong>PHP简介</strong></p>
+<ul>
+<li>开源（open source）软件，跨平台，常用操作系统稳定执行。Windows / Linux。做WEB开发的经典组合 WAMP,LAMP基本都是开源软件。</li>
+</ul>
+<ul>
+<li>入门简单，用户只需要关注应用，开发成本低。</li>
+</ul>
+<ul>
+<li>支持的大多数主流数据库。MySQL，oracle,Redis等<br>​</li>
+</ul>
+<blockquote>
+<p>文件以.php后缀结尾，所有程序包含在<code>&lt;?php 这里是代码 ?&gt;</code><br>避免使用中文目录和中文文件名 </p>
+<p>php页面无法直接打开需要运行在服务器环境当中</p>
+</blockquote>
+<h2 id="php初体验"><a href="#php初体验" class="headerlink" title="php初体验"></a>php初体验</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  	<span class="comment">//echo 相当于document.write</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"hello world"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>输入中文乱码问题：如果使用echo输出中文，会乱码。</p>
+<p><strong>在php的语法中，末尾必须加分号，不然会报错（最后一行可以不加分号）</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">//content-Type:text/html;返回内容是一个HTML文档，这样设置后，就能识别HTML标签了。</span></span><br><span class="line">    <span class="comment">//charset=utf-8 设置编码集</span></span><br><span class="line">    header(<span class="string">"content-Type:text/html;charset=utf-8"</span>);</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"hello world"</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br/&gt;"</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"大家好;</span></span><br><span class="line"><span class="string">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><blockquote>
+<p>php是一门弱类型语法，变量的类型可以随意改变。<br>变量其实就是存储数据的容器</p>
+</blockquote>
+<p><strong>变量的命名规则</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 不需要关键字进行声明，变量在第一次赋值的时候被创建。</span></span><br><span class="line"><span class="comment">// 2. 必须以$符号开始</span></span><br><span class="line"><span class="comment">// 3. $后面的命名规则与js的变量命名规则一致。</span></span><br><span class="line">$name = <span class="string">"hoho"</span>;</span><br><span class="line"><span class="keyword">echo</span> $name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><p><strong>字符串</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$str = <span class="string">"hoho"</span>;</span><br><span class="line"><span class="keyword">echo</span> $str;</span><br></pre></td></tr></table></figure>
+
+<p><strong>整数</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">echo</span> $num;</span><br></pre></td></tr></table></figure>
+
+<p><strong>浮点型</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$float = <span class="number">11.11</span>;</span><br><span class="line"><span class="keyword">echo</span> $float;</span><br></pre></td></tr></table></figure>
+
+<p><strong>布尔类型</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">// 当布尔类型值为true时，输出1</span></span><br><span class="line"><span class="keyword">echo</span> $flag;</span><br><span class="line">$flag = <span class="keyword">false</span>;</span><br><span class="line"><span class="comment">// 当布尔类型为false时，输出空字符串</span></span><br><span class="line"><span class="keyword">echo</span> $flag;</span><br></pre></td></tr></table></figure>
+
+<p><strong>字符串连接符</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 在php中，+号只有算数的功能，并不能拼串</span></span><br><span class="line"><span class="comment">// 2. 在php中，拼串使用.</span></span><br><span class="line">$name = <span class="string">"hoho"</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"大家好，我是"</span> . $name . <span class="string">"，今年18岁"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>php中的单引号与双引号</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 字符串的定义可以使用单引号，也可以使用双引号</span></span><br><span class="line">$name = <span class="string">"hoho"</span>;</span><br><span class="line">$desc = <span class="string">'haha'</span>;</span><br><span class="line"><span class="comment">// 2. 双引号可以解析变量</span></span><br><span class="line"><span class="comment">// 3. 单引号的性能会高于双引号</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> $name;</span><br><span class="line"><span class="keyword">echo</span> $desc;</span><br><span class="line"></span><br><span class="line">$str = <span class="string">'$name haha'</span>;<span class="comment">// $name haha</span></span><br><span class="line"><span class="keyword">echo</span> $str;</span><br><span class="line"></span><br><span class="line">$str = <span class="string">"$name haha"</span>;</span><br><span class="line"><span class="keyword">echo</span> $str;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
+<p>在php中，数组分为两种，索引数组和关联数组</p>
+<p>计算数组长度的方法： count(数组名);</p>
+</blockquote>
+<p><strong>索引数组（类似与JS中的数组）</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">array</span>(<span class="string">"张飞"</span>,<span class="string">"赵云"</span>,<span class="string">"马超"</span>);</span><br><span class="line"><span class="keyword">echo</span> $arr;<span class="comment">// echo只能打印基本数据类型</span></span><br><span class="line"><span class="keyword">echo</span> $arr[<span class="number">0</span>];<span class="comment">// 张飞</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>关联数组（类似与JS中的对象）</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性名必须用引号引起来</span></span><br><span class="line">$arr = <span class="keyword">array</span>(<span class="string">"name"</span>=&gt;<span class="string">"zhangsan"</span>, <span class="string">"age"</span>=&gt;<span class="number">18</span>);</span><br><span class="line"><span class="keyword">echo</span> $arr[<span class="string">"name"</span>];</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出语句</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. echo 输出简单数据类型</span></span><br><span class="line"><span class="comment">//2. print_r 输出数据结构，一般用于输出复杂类型。</span></span><br><span class="line">print_r($arr);<span class="comment">// print_r是一个函数，不要忘记小括号</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><p>基本上，所有语言的if..else语法都是一样</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$age = <span class="number">17</span>;</span><br><span class="line"><span class="keyword">if</span> ($age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"终于可以看电影了,嘿嘿嘿"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"哎，还是回家学习吧"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p><strong>遍历索引数组</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">array</span>(<span class="string">"张三"</span>, <span class="string">"李四"</span>, <span class="string">"王五"</span>, <span class="string">"赵六"</span>);</span><br><span class="line"><span class="comment">// 获取数组的长度： count($arr)</span></span><br><span class="line"><span class="keyword">for</span>($i = <span class="number">0</span>; $i &lt; count($arr); $i++) &#123;</span><br><span class="line">  <span class="keyword">echo</span> $arr[$i];</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>遍历关联数组</strong> </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历关联数组</span></span><br><span class="line">$arr = <span class="keyword">array</span>(</span><br><span class="line">  <span class="string">"name"</span>=&gt;<span class="string">"zs"</span>,</span><br><span class="line">  <span class="string">"age"</span>=&gt;<span class="number">18</span>,</span><br><span class="line">  <span class="string">"sex"</span>=&gt;<span class="number">20</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">foreach</span>($arr <span class="keyword">as</span> $key =&gt; $value) &#123;</span><br><span class="line">  <span class="keyword">echo</span> $key . <span class="string">"="</span> . $value . <span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="表单提交"><a href="#表单提交" class="headerlink" title="表单提交"></a>表单提交</h1><blockquote>
+<p>表单（form）：表单用于收集用户输入信息，并将数据提交给服务器。是一种常见的与服务端数据交互的一种方式</p>
+</blockquote>
+<ol>
+<li>action：指定表单的提交地址</li>
+<li>method:指定表单的提交方式，get/post，默认get</li>
+<li>input的数据想要提交到后台，必须指定name属性，后台通过name属性获取值</li>
+<li>想要提交表单，不能使用input:button 必须使用input:submit</li>
+</ol>
+<p><strong>php获取表单数据</strong> </p>
+<ul>
+<li>$_GET是PHP系统提供的一个超全局变量，是一个数组，里面存放了表单通过get方式提交的数据。</li>
+<li>$_POST也是PHP系统提供的一个超全局变量，是一个数组，里面存放了表单通过post方式提交的数据。</li>
+</ul>
+<p><strong>get与post的区别</strong> </p>
+<ol>
+<li>get方式<br>1.1 数据会拼接在url地址的后面?username=hcc&amp;password=123456<br>1.2 地址栏有长度限制，因此get方式提交数据大小不会超过4k</li>
+<li>post方式<br>2.1 数据不会在url中显示，相比get方式，post更安全<br>2.2 提交的数据没有大小限制</li>
+</ol>
+<p>根据HTTP规范，GET用于信息获取，POST表示可能修改变服务器上的资源的请求</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/" data-id="ckbrnkcqv0066d4u8qctqqymc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/01/Ajax/02-HTTP协议-请求响应报文-状态码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          02-HTTP协议,请求响应报文,状态码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/11/01/JQuery/04-解绑-触发-事件对象-链式编程-end-隐式迭代-插件使用-封装/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">04-解绑,触发,事件对象,链式编程,end,隐式迭代,插件使用&amp;封装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Element-ui/">Element-ui</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Vuex/">Vuex</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/RegExp/">RegExp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/webAPI/">webAPI</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plugin/">plugin</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/test/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webAPI/">webAPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/jquery-fileupload的使用/">jquery-fileupload的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/前端校验插件bootstrap-validator/">前端校验插件bootstrap-validator </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Bloodthirsty2B<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

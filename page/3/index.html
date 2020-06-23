@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="BS2B&#39;s blog">
-<meta property="og:url" content="http://blogbloodthirsty2b.com/page/3/index.html">
+<meta property="og:url" content="http://bloodthirsty2b.github.io/page/3/index.html">
 <meta property="og:site_name" content="BS2B&#39;s blog">
 <meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogbloodthirsty2b.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bloodthirsty2b.github.io"></form>
       </div>
     </div>
   </div>
@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-javascript/04-函数,作用域,预解析,沙箱模式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-node/express的简单使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/04/javascript/04-函数,作用域,预解析,沙箱模式/" class="article-date">
-  <time datetime="2018-10-04T05:26:34.000Z" itemprop="datePublished">2018-10-04</time>
+    <a href="/2019/11/04/node/express的简单使用/" class="article-date">
+  <time datetime="2019-11-04T13:26:16.000Z" itemprop="datePublished">2019-11-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/nodejs/">nodejs</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/04/javascript/04-函数,作用域,预解析,沙箱模式/">函数,作用域,预解析,沙箱模式</a>
+      <a class="article-title" href="/2019/11/04/node/express的简单使用/">express的简单使用</a>
     </h1>
   
 
@@ -92,103 +92,478 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数基础"><a href="#函数基础" class="headerlink" title="函数基础"></a>函数基础</h2><p>重复代码、冗余代码的缺点：</p>
+        <h1 id="express的简单使用"><a href="#express的简单使用" class="headerlink" title="express的简单使用"></a>express的简单使用</h1><p><strong>需要的npm包：express、body-parser、art-template、express-art-template</strong></p>
+<p><strong>预先引入模块：express、fs、path、body-parser</strong></p>
+<h3 id="一、静态页面的处理"><a href="#一、静态页面的处理" class="headerlink" title="一、静态页面的处理"></a>一、静态页面的处理</h3><ol>
+<li>使用 <code>app.get</code>方法精确匹配地址</li>
+<li>使用 <code>res.sendFile</code>方法发送静态页面内容（可以发字符串内容或文件路径）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">'/static'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> filePath = path.join(__dirname, <span class="string">'/pages/static.html'</span>)</span><br><span class="line">  res.sendfile(filePath)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/04/node/express的简单使用/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/node/express的简单使用/" data-id="ckbrnkcp9002ld4u8c1yoxx14" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/展开运算符，可以展开对象和数组" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/展开运算符，可以展开对象和数组/" class="article-date">
+  <time datetime="2019-11-04T13:19:51.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/展开运算符，可以展开对象和数组/">展开运算符，可以展开对象和数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="展开运算符，可以展开对象和数组"><a href="#展开运算符，可以展开对象和数组" class="headerlink" title="展开运算符，可以展开对象和数组"></a>展开运算符，可以展开对象和数组</h1><h2 id="一、语法："><a href="#一、语法：" class="headerlink" title="一、语法："></a>一、语法：</h2><p><code>...数组或对象</code></p>
+<h2 id="二、展开数组"><a href="#二、展开数组" class="headerlink" title="二、展开数组"></a>二、展开数组</h2><!-- more -->
+
 <ol>
-<li><p>代码重复，可阅读性差</p>
-</li>
-<li><p>不易维护，如果代码逻辑改变了，所有地方的代码都要跟着改变，效率太低。</p>
-</li>
+<li>可以用于数组拼接</li>
 </ol>
-<h3 id="函数的声明与调用"><a href="#函数的声明与调用" class="headerlink" title="函数的声明与调用"></a>函数的声明与调用</h3><p>声明函数的语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3]</span><br><span class="line">const arr2 = [4, 5, 6]</span><br><span class="line">const newArr = [...arr1, 100, ...arr2]</span><br></pre></td></tr></table></figure>
 
-<p>调用函数的语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名();</span><br></pre></td></tr></table></figure>
-
-<p>特点：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 函数声明的时候，函数体并不会执行，函数体只有在调用的时候才会执行，</span><br><span class="line"><span class="number">2.</span> 可以调用多次</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><ol>
-<li>形参（形式参数）：在函数声明时，设置的参数。作用是占位置。</li>
-<li>实参（实际参数）：在函数调用时，传入的参数。作用：函数调用时，会把实参的值赋值给形参，这样形参就有了值。</li>
+<ol start="2">
+<li>应用举例：可以用来求数组最大值</li>
 </ol>
-<p>语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//带参数的函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参<span class="number">1</span>, 形参<span class="number">2</span>, 形参...</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带参数的函数调用</span></span><br><span class="line">函数名(实参<span class="number">1</span>, 实参<span class="number">2</span>, 实参<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 4, 6, 2, 45, 72, 4, 7, 8]</span><br><span class="line">const max = Math.max(...arr)// 👉1, 4, 6, 2, 45, 72, 4, 7, 8</span><br></pre></td></tr></table></figure>
 
-<p>注意：</p>
-<ul>
-<li>形参在声明时，值不固定，只有在调用的时候，形参的值才确定，形参的值会跟着函数调用时的实参不一样而不一样。</li>
-<li>如何确定形参：在声明函数的时候，碰到不确定的值的时候，就可以定义成形参。</li>
-</ul>
-<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><blockquote>
-<p>当函数执行完的时候，我们期望函数给我一些反馈（比如计算的结果），这个时候可以让函数返回一些东西。也就是返回值。函数通过return返回一个返回值</p>
-</blockquote>
-<p>返回值语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明一个带返回值的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参<span class="number">1</span>, 形参<span class="number">2</span>, 形参...</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">  <span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以通过变量来接收这个返回值</span></span><br><span class="line"><span class="keyword">var</span> 变量 = 函数名(实参<span class="number">1</span>, 实参<span class="number">2</span>, 实参<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="二、展开对象-相当于把对象的键值对提取出来"><a href="#二、展开对象-相当于把对象的键值对提取出来" class="headerlink" title="二、展开对象(相当于把对象的键值对提取出来)"></a>二、展开对象(相当于把对象的键值对提取出来)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj1 = &#123;</span><br><span class="line">  name: &apos;zs&apos;,</span><br><span class="line">  age: 18</span><br><span class="line">&#125;</span><br><span class="line">const obj2 = &#123;</span><br><span class="line">  sayHi() &#123;</span><br><span class="line">    console.log(&apos;hi&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const mix = &#123;</span><br><span class="line">  ...obj1,</span><br><span class="line">  ...obj2,</span><br><span class="line">  ability: &apos;S.H.I.T&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>注意：</p>
-<ul>
-<li>函数的调用结果就是返回值，因此我们可以直接对函数调用结果进行操作。</li>
-</ul>
-<h3 id="函数三要素"><a href="#函数三要素" class="headerlink" title="函数三要素"></a>函数三要素</h3><p>函数三要素包括：函数名、参数、返回值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span> (<span class="params">r</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.PI * r * r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="函数高级"><a href="#函数高级" class="headerlink" title="函数高级"></a>函数高级</h2><h3 id="函数调试"><a href="#函数调试" class="headerlink" title="函数调试"></a>函数调试</h3><p>断点调试：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">F8：跳到下一个断点，如果后面没有断点了，那么代码直接执行完。</span><br><span class="line">F10：单步调试（跳过函数调用）</span><br><span class="line">F11：单步调试（进入函数调用）</span><br><span class="line">shift+F11：跳出函数调用</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数内部可以调用函数"><a href="#函数内部可以调用函数" class="headerlink" title="函数内部可以调用函数"></a>函数内部可以调用函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn1开始..."</span>);</span><br><span class="line">    fn2();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"fn1结束..."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"执行fn2的代码"</span>); </span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"执行fn2的代码"</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"执行fn2的代码"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在函数1中调用了函数2</span></span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
-
-<h3 id="全局变量与局部变量"><a href="#全局变量与局部变量" class="headerlink" title="全局变量与局部变量"></a>全局变量与局部变量</h3><p>全局变量：在最函数外，script标签内声明的变量就是全局变量，全局变量在任何地方都能访问的到。</p>
-<p>局部变量：在函数中声明的变量，就是局部变量，局部变量只有在当前函数体内能够访问。</p>
-<p>隐式全局变量：没有使用var定义的变量也是全局变量。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">11</span>;<span class="comment">//全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> num1 = <span class="number">22</span>;<span class="comment">//局部变量</span></span><br><span class="line">  num2 = <span class="number">33</span>;<span class="comment">//隐式全局变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(num1);</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
-
-<p>变量的查找规则：</p>
-<ul>
-<li>自己有就用自己的，自己没有就用外面的。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">11</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">22</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(num);<span class="comment">//22</span></span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line"><span class="built_in">console</span>.log(num);<span class="comment">//11</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h3><p>js执行代码分为两个过程：</p>
-<ul>
-<li>预解析过程（变量与函数提升）</li>
-<li>代码一行一行执行</li>
-</ul>
-<p>预解析过程：</p>
-<ol>
-<li>函数优先，先提升function，后提升var</li>
-<li>遇到重名的var会被忽略。</li>
-<li>遇到重名的function会被覆盖。</li>
-</ol>
-<p>测试：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. </span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">fn1();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. </span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">18</span>;</span><br><span class="line">fn2();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">9</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="built_in">console</span>.log(b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.</span></span><br><span class="line">fn3();</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a = b = c = <span class="number">9</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">  <span class="built_in">console</span>.log(b);</span><br><span class="line">  <span class="built_in">console</span>.log(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="声明函数的两种方式"><a href="#声明函数的两种方式" class="headerlink" title="声明函数的两种方式"></a>声明函数的两种方式</h3><p>函数声明(命名函数)：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>函数表达式(匿名函数)：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这两种函数声明的区别：</p>
-<ol>
-<li>命名函数可以先调用，在声明，因为预解析</li>
-<li>函数表达式必须先声明，再调用（在DOM中注册事件的时候用的非常的多）</li>
-</ol>
-<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><blockquote>
-<p>匿名函数：没有名字的函数</p>
-</blockquote>
-<p>匿名函数如何使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 将匿名函数赋值给一个变量，这样就可以通过变量进行调用</span><br><span class="line">2. 匿名函数自调用</span><br></pre></td></tr></table></figure>
-
-<p>自执行函数（匿名函数自调用）的作用：防止全局变量污染。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogbloodthirsty2b.com/2018/10/04/javascript/04-函数,作用域,预解析,沙箱模式/" data-id="cjmxfy6qw000574u8zlz4ene6" class="article-share-link">Share</a>
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/展开运算符，可以展开对象和数组/" data-id="ckbrnkcrt007td4u8yhlk9i46" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/模板字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/模板字符串/" class="article-date">
+  <time datetime="2019-11-04T13:19:18.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/模板字符串/">模板字符串</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h1><h2 id="一、语法："><a href="#一、语法：" class="headerlink" title="一、语法："></a>一、语法：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`模板内容`</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  name: <span class="string">'ss'</span>,</span><br><span class="line">  age: <span class="number">19</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、特点："><a href="#二、特点：" class="headerlink" title="二、特点："></a>二、特点：</h2><ol>
+<li>支持换行和空格</li>
+<li>支持变量<code>${ 变量名 }</code></li>
+<li>支持引用类型的方法和 js 语法</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'.person'</span>).innerHTML =</span><br><span class="line"></span><br><span class="line">      <span class="string">`&lt;h1&gt;人物&lt;/h1&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">      &lt;p&gt;<span class="subst">$&#123; obj.name.toUpperCase()&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">      &lt;p&gt;<span class="subst">$&#123; obj.age * <span class="number">2</span>&#125;</span>&lt;/p&gt;`</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/模板字符串/" data-id="ckbrnkcrv007wd4u8oght6wfv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/解构赋值/" class="article-date">
+  <time datetime="2019-11-04T13:18:26.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/解构赋值/">解构赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><h2 id="一、对象解构"><a href="#一、对象解构" class="headerlink" title="一、对象解构"></a>一、对象解构</h2><h3 id="1-语法："><a href="#1-语法：" class="headerlink" title="1. 语法："></a>1. 语法：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">   name: &apos;js&apos;,</span><br><span class="line">   age: &apos;18&apos;,</span><br><span class="line">   desc: &apos;hoho&apos;</span><br><span class="line">&#125;</span><br><span class="line">let &#123; name, age, desc &#125; = obj</span><br><span class="line">console.log(name, age, desc) // &apos;js&apos;, &apos;18&apos;, &apos;hoho&apos;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/04/js/es6/解构赋值/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/解构赋值/" data-id="ckbrnkcs50090d4u8p60cuwnj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/箭头函数/" class="article-date">
+  <time datetime="2019-11-04T13:17:20.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/箭头函数/">箭头函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><h2 id="一、语法："><a href="#一、语法：" class="headerlink" title="一、语法："></a>一、语法：</h2><p>就是把function删掉，在小括号和大括号中间添加了一个 ‘=&gt;’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const sum = (n1, n2) =&gt; &#123;</span><br><span class="line">  console.log(n1 + n2);</span><br><span class="line">&#125;</span><br><span class="line">sum(1, 2) // 3</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/04/js/es6/箭头函数/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/箭头函数/" data-id="ckbrnkcrw007zd4u84aachtaa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/函数参数默认值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/函数参数默认值/" class="article-date">
+  <time datetime="2019-11-04T13:16:03.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/函数参数默认值/">函数参数默认值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="函数参数默认值"><a href="#函数参数默认值" class="headerlink" title="函数参数默认值"></a>函数参数默认值</h1><p>函数可以设置默认值了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function add(a = 0, b = 1) &#123;</span><br><span class="line">  console.log(a + b);</span><br><span class="line">&#125;</span><br><span class="line">add() // 1</span><br><span class="line">add(1) // 2</span><br><span class="line">add(1, 2) // 3</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/函数参数默认值/" data-id="ckbrnkcrq007nd4u8ttmk0fds" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/对象中属性和方法的简写" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/对象中属性和方法的简写/" class="article-date">
+  <time datetime="2019-11-04T13:15:01.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/对象中属性和方法的简写/">对象中属性和方法的简写</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="对象中属性和方法的简写"><a href="#对象中属性和方法的简写" class="headerlink" title="对象中属性和方法的简写"></a>对象中属性和方法的简写</h1><h2 id="包含："><a href="#包含：" class="headerlink" title="包含："></a>包含：</h2><ol>
+<li><p>对象中属性名和变量名相同时可以简写</p>
+</li>
+<li><p>对象中的方法可以省略function</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">'zs'</span></span><br><span class="line"><span class="keyword">const</span> age = <span class="number">18</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name,</span><br><span class="line">  age,</span><br><span class="line">  sayHi() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/对象中属性和方法的简写/" data-id="ckbrnkcrs007qd4u8zwau709b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/startsWith-endsWith-includes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/startsWith-endsWith-includes/" class="article-date">
+  <time datetime="2019-11-04T13:13:50.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/startsWith-endsWith-includes/">startsWith &amp; endsWith &amp; includes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="startsWith-amp-endsWith-amp-includes-（es6字符串新方法-）"><a href="#startsWith-amp-endsWith-amp-includes-（es6字符串新方法-）" class="headerlink" title="startsWith &amp; endsWith &amp; includes （es6字符串新方法 ）"></a>startsWith &amp; endsWith &amp; includes （es6字符串新方法 ）</h1><h2 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">'abcdef'</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">'abc'</span>));<span class="comment">// 判断是否以abc开头</span></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">'abc'</span>));<span class="comment">// 判断是否以abc结束</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'abc'</span>));<span class="comment">// 判断是否包含abc 可以用indexOf替代，不过includes返回布尔值</span></span><br></pre></td></tr></table></figure>
+
+<p><em>类似于正则</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/startsWith-endsWith-includes/" data-id="ckbrnkcrl007gd4u8ydm4sw7v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/let-const" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/let-const/" class="article-date">
+  <time datetime="2019-11-04T13:03:42.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/let-const/">let&amp;const</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let &amp; const"></a>let &amp; const</h1><h2 id="一、-let"><a href="#一、-let" class="headerlink" title="一、 let"></a>一、 let</h2><h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><ol>
+<li><p>不会预解析</p>
+</li>
+<li><p>不允许重复声明</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">200</span> <span class="comment">// 同样不行</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>块级作用域</p>
+</li>
+</ol>
+<h2 id="二、-const"><a href="#二、-const" class="headerlink" title="二、 const"></a>二、 const</h2><h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3><ol>
+<li>不允许修改值</li>
+<li>定义的时候必须初始化(赋值)👆</li>
+<li>const声明的变量是对象时代表其指针不可改变👈(可以改对象内容)</li>
+<li>let有的特点const也有</li>
+</ol>
+<p><em>一般变量不会再修改值了就用 const ，并且可以在改变值的时候思考为什么修改(有点像标签的 id )</em><br><em>只要是复杂类型一般都用 const 定义(内容可以修改，但是数据类型不能变)(包括数组，对象，函数)</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/let-const/" data-id="ckbrnkcrn007id4u8t13x3mjc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/forEach-map-filter-some-every" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/js/es6/forEach-map-filter-some-every/" class="article-date">
+  <time datetime="2019-11-04T13:01:25.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/js/es6/forEach-map-filter-some-every/">forEach&amp;map&amp;filter&amp;some&amp;every</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="forEach-amp-map-amp-filter-amp-some-amp-every的使用"><a href="#forEach-amp-map-amp-filter-amp-some-amp-every的使用" class="headerlink" title="forEach &amp; map &amp; filter &amp; some &amp; every的使用"></a>forEach &amp; map &amp; filter &amp; some &amp; every的使用</h1><h2 id="一、forEach"><a href="#一、forEach" class="headerlink" title="一、forEach"></a>一、forEach</h2><h3 id="1-语法："><a href="#1-语法：" class="headerlink" title="1.  语法："></a>1.  语法：</h3><blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; arr.forEach(回调函数(item, index, array))</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+</blockquote>
+<h3 id="2-特点："><a href="#2-特点：" class="headerlink" title="2.  特点："></a>2.  特点：</h3><p>  ① 帮忙写了一个for循环，循环次数为数组长度，每次遍历index++，将arr[index]作为item传入回调函数<br>  <em>特殊情况：在回调函数中执行 <code>arr.pop()</code> 或 <code>arr.shift()</code> ，数组变短但是依然根据index的大小来遍历，导致遍历次数减半</em><br>  ② 可传入一个回调函数循环执行，回调函数可以使用数组的item，index，array三个参数</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/04/js/es6/forEach-map-filter-some-every/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/forEach-map-filter-some-every/" data-id="ckbrnkcra0076d4u8y69cih5r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 
     </footer>
   </div>
@@ -212,7 +587,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Element-ui/">Element-ui</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Vuex/">Vuex</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/RegExp/">RegExp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/webAPI/">webAPI</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plugin/">plugin</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/test/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -222,7 +597,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webAPI/">webAPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -232,7 +607,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -241,7 +616,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -254,23 +629,23 @@
       <ul>
         
           <li>
-            <a href="/2018/10/06/javascript/06-内置对象,数组方法,基本包装类型/">内置对象,数组方法,基本包装类型</a>
+            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
           </li>
         
           <li>
-            <a href="/2018/10/05/javascript/05-对象,for in循环,值类型,引用类型/">对象,for in循环,值类型,引用类型</a>
+            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/04/javascript/04-函数,作用域,预解析,沙箱模式/">函数,作用域,预解析,沙箱模式</a>
+            <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/03/javascript/03-数组-冒泡排序/">数组,冒泡排序</a>
+            <a href="/2019/11/04/plugin/jquery-fileupload的使用/">jquery-fileupload的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/02/javascript/02-if-switch-三元-循环/">if,switch,三元,循环</a>
+            <a href="/2019/11/04/plugin/前端校验插件bootstrap-validator/">前端校验插件bootstrap-validator </a>
           </li>
         
       </ul>
@@ -285,7 +660,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Bloodthirsty2B<br>
+      &copy; 2020 Bloodthirsty2B<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

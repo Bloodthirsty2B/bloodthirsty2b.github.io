@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="BS2B&#39;s blog">
-<meta property="og:url" content="http://blogbloodthirsty2b.com/page/5/index.html">
+<meta property="og:url" content="http://bloodthirsty2b.github.io/page/5/index.html">
 <meta property="og:site_name" content="BS2B&#39;s blog">
 <meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogbloodthirsty2b.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bloodthirsty2b.github.io"></form>
       </div>
     </div>
   </div>
@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-javascript/02-if-switch-三元-循环" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Vue/Vue.use-Vuex-反向代理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/02/javascript/02-if-switch-三元-循环/" class="article-date">
-  <time datetime="2018-10-02T03:07:38.000Z" itemprop="datePublished">2018-10-02</time>
+    <a href="/2019/10/23/Vue/Vue.use-Vuex-反向代理/" class="article-date">
+  <time datetime="2019-10-23T06:40:17.000Z" itemprop="datePublished">2019-10-23</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>►<a class="article-category-link" href="/categories/Vue/Vuex/">Vuex</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/javascript/02-if-switch-三元-循环/">if,switch,三元,循环</a>
+      <a class="article-title" href="/2019/10/23/Vue/Vue.use-Vuex-反向代理/">Vue.use,Vuex,反向代理</a>
     </h1>
   
 
@@ -92,107 +92,524 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><p> 从上到下执行的代码就是顺序结构</p>
-<p><strong>程序默认就是由上到下一行一行的顺序执行的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"哈哈1"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"哈哈2"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"哈哈3"</span>);</span><br></pre></td></tr></table></figure>
+        <h2 id="Vue-use"><a href="#Vue-use" class="headerlink" title="Vue.use"></a>Vue.use</h2><p>所有vue后缀文件都是组件，需要在main.js中引入(import)并注册组件</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/10/23/Vue/Vue.use-Vuex-反向代理/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/10/23/Vue/Vue.use-Vuex-反向代理/" data-id="ckbrnkco4000vd4u8la4pc8bm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vuex/">Vuex</a></li></ul>
 
-<p><img src="/images/js/02/%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84.png" alt></p>
-<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><p>分支结构，也叫选择结构，根据不同的情况，执行对应代码</p>
-<p><img src="/images/js/02/%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84.png" alt></p>
-<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>循环结构：重复做一件事情</p>
-<p><img src="/images/js/02/%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84.png" alt></p>
-<h1 id="分支结构-1"><a href="#分支结构-1" class="headerlink" title="分支结构"></a>分支结构</h1><h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><ul>
-<li>单独的if语句</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法</span></span><br><span class="line"><span class="keyword">if</span> (条件)&#123;</span><br><span class="line">  <span class="comment">//只有当条件为 true 时执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">if</span>(age &lt; <span class="number">12</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"年龄小于12"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </footer>
+  </div>
+  
+</article>
 
+
+  
+    <article id="post-css/grid布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/16/css/grid布局/" class="article-date">
+  <time datetime="2019-10-16T09:08:01.000Z" itemprop="datePublished">2019-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/16/css/grid布局/">grid布局语法参考</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>将网页划分成一个个网格，可以任意组合不同的网格 </p>
+<h1 id="grid布局语法参考"><a href="#grid布局语法参考" class="headerlink" title="grid布局语法参考"></a>grid布局语法参考</h1><blockquote>
+<p>grid布局是将网页划分成一个个网格，并将其任意组合的布局方法。类似于以前的table布局。</p>
+</blockquote>
 <ul>
-<li>if..else语句</li>
+<li>和flex布局的区别：flex是围绕轴线进行的一系列布局方法；而grid是将容器划分为行和列进行布局，其灵活性更高。</li>
+<li>兼容性：有较大兼容性问题，参考<a href="https://www.caniuse.com/#search=grid" target="_blank" rel="noopener">caniuse-grid</a></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件)&#123;</span><br><span class="line">  <span class="comment">//当条件为 true 时执行的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">//当条件不为 true 时执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">if</span>(age &lt; <span class="number">12</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"年龄小于12"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"年龄不小于12"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/10/16/css/grid布局/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/10/16/css/grid布局/" data-id="ckbrnkcon001md4u834vco94u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
 
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js/es6/promise-async-await" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/18/js/es6/promise-async-await/" class="article-date">
+  <time datetime="2019-09-18T11:02:57.000Z" itemprop="datePublished">2019-09-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/18/js/es6/promise-async-await/">promise,async,await</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="promise-async-await"><a href="#promise-async-await" class="headerlink" title="promise,async,await"></a>promise,async,await</h1><h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>Promise最大的好处是在<strong>异步执行的流程</strong>中，把<strong>执行代码</strong>和<strong>处理结果</strong>的代码清晰地分离了 </p>
+<p>语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建</span></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> promise(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">    resolve()</span><br><span class="line">    ...</span><br><span class="line">    reject()</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">p.then(fn1).catch(fn2)</span><br></pre></td></tr></table></figure>
+
+<p>特点：</p>
 <ul>
-<li>if..else if..else语句</li>
+<li>创建promise实例时，需要传入一个回调函数，该回调函数有两个函数参数，执行过程中会在你需要的时机调用两个传入的函数</li>
+<li>使用promise时，p.then()内传入的函数就是第一个参数resolve的执行内容，p.catch()内传入的函数就是第二个参数reject的执行内容</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件 <span class="number">1</span>)&#123;</span><br><span class="line">  <span class="comment">//当条件 1 为 true 时执行的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (条件 <span class="number">2</span>) &#123;</span><br><span class="line">  <span class="comment">//当条件 2 为 true 时执行的代码</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">//当条件 1 和 条件 2 都不为 true 时执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">if</span>(age &lt; <span class="number">12</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"年龄小于12"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(age &lt; <span class="number">18</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"年龄不小于12且大于18"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"年龄不小于18"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/09/18/js/es6/promise-async-await/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/09/18/js/es6/promise-async-await/" data-id="ckbrnkcre007bd4u8apzcs9wu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 
-<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 结果 = 判断条件 ? 值<span class="number">1</span> ： 值<span class="number">2</span> </span><br><span class="line">如果判断条件为<span class="literal">true</span>， 结果就是值<span class="number">1</span>， 如果为<span class="literal">false</span>， 结果就是 值<span class="number">2</span></span><br></pre></td></tr></table></figure>
+    </footer>
+  </div>
+  
+</article>
 
-<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><blockquote>
-<p>if..else适用于范围的判断，switch..case适用于具体的值的判断</p>
+
+  
+    <article id="post-js/正则进阶" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/13/js/正则进阶/" class="article-date">
+  <time datetime="2019-09-13T04:39:01.000Z" itemprop="datePublished">2019-09-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/RegExp/">RegExp</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/13/js/正则进阶/">正则进阶</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正则进阶"><a href="#正则进阶" class="headerlink" title="正则进阶"></a>正则进阶</h1><h2 id="零宽断言"><a href="#零宽断言" class="headerlink" title="零宽断言"></a>零宽断言</h2><h3 id="先行断言"><a href="#先行断言" class="headerlink" title="先行断言"></a>先行断言</h3><ul>
+<li>语法：<code>/reg1(?=reg2)/</code></li>
+<li>含义：<code>/(?=reg2)/</code>本身在正则中不占位，它所在的位置的<strong>后面</strong>要有reg2</li>
+<li>作用：匹配reg1，同时后面要有reg2</li>
+<li>举例：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[a-z]*(?=t)/.exec(<span class="string">'got it'</span>) <span class="comment">// ["go", index: 0, input: "got it", groups: undefined]</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/09/13/js/正则进阶/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/09/13/js/正则进阶/" data-id="ckbrnkcp6002hd4u8unnqqpi2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue/Element-ui使用心得" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/21/Vue/Element-ui使用心得/" class="article-date">
+  <time datetime="2019-06-21T02:56:47.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>►<a class="article-category-link" href="/categories/Vue/Element-ui/">Element-ui</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/21/Vue/Element-ui使用心得/">Element-ui使用心得</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Element-ui使用心得"><a href="#Element-ui使用心得" class="headerlink" title="Element-ui使用心得"></a>Element-ui使用心得</h1><h3 id="el-form"><a href="#el-form" class="headerlink" title="el-form"></a>el-form</h3><ul>
+<li>el-form数据<code>:model</code>，校验数据<code>:rules</code>，表单标签宽度<code>label-width</code></li>
+<li>el-form-item表单标签<code>label</code>，校验数据<code>prop</code></li>
+<li>内部表单组件数据<code>v-model</code></li>
+</ul>
+<hr>
+<h5 id="修改数据："><a href="#修改数据：" class="headerlink" title="修改数据："></a>修改数据：</h5><ul>
+<li><p>数据回显：</p>
+<p>若在dialog中则在关闭之后通过this.$refs获取el-form实例上的resetFields方法重置表单数据（重置表单一定要给el-form-item加prop属性）</p>
+</li>
+<li><p>数据上传：</p>
+<p>通过this.$refs获取el-form实例上的validate方法，使用try&amp;catch进行表单校验，校验成功后发送ajax上传表单数据</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/21/Vue/Element-ui使用心得/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/06/21/Vue/Element-ui使用心得/" data-id="ckbrnkco7000yd4u8tiayxzlf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webAPI/06-动画-短路运算-轮播图-offset-scroll-client-classList-移动端事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/13/webAPI/06-动画-短路运算-轮播图-offset-scroll-client-classList-移动端事件/" class="article-date">
+  <time datetime="2019-01-13T08:07:35.000Z" itemprop="datePublished">2019-01-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/webAPI/">webAPI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/13/webAPI/06-动画-短路运算-轮播图-offset-scroll-client-classList-移动端事件/">06-动画,短路运算,轮播图,offset,scroll,client,classList,移动端事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="动画函数封装"><a href="#动画函数封装" class="headerlink" title="动画函数封装"></a>动画函数封装</h1>
+        
+          <p class="article-more-link">
+            <a href="/2019/01/13/webAPI/06-动画-短路运算-轮播图-offset-scroll-client-classList-移动端事件/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/01/13/webAPI/06-动画-短路运算-轮播图-offset-scroll-client-classList-移动端事件/" data-id="ckbrnkcqr0061d4u8vda2909r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webAPI/">webAPI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webAPI/05-BOM-window-定时器-延时器-location-navigator-history" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/11/webAPI/05-BOM-window-定时器-延时器-location-navigator-history/" class="article-date">
+  <time datetime="2019-01-11T02:02:39.000Z" itemprop="datePublished">2019-01-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/webAPI/">webAPI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/11/webAPI/05-BOM-window-定时器-延时器-location-navigator-history/">05-BOM,window,定时器,延时器,location,navigator,history</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><blockquote>
+<p>BOM（Browser Object Model）：浏览器对象模型，提供了一套操作浏览器功能的工具。</p>
 </blockquote>
-<p>语法格式:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (变量) &#123;</span><br><span class="line">  <span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 值<span class="number">3</span>:</span><br><span class="line">    语句<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  …</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    默认语句;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">break可以省略，如果省略，代码会继续执行下一个case</span><br><span class="line">switch 语句在比较值时使用的是全等操作符, 因此不会发生类型转换（例如，字符串&apos;10&apos; 不等于数值 10）</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
-<li>如果是范围性的判断，使用if..else会更加方便</li>
-<li>如果是对具体值的判断，使用switch..case语句会更加方便，当然用if..else也是可以的。</li>
-<li>如果if..else比较简单，可以使用三元运算符进行替代。</li>
+<p>BOM包含的内容很多，但是除了定时器、延时器外很多东西都不太常用 。</p>
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><ol>
+<li>window对象是一个全局对象，也可以说是JavaScript中的顶级对象</li>
+<li>像document、alert()、console.log()这些都是window的属性，其实BOM中基本所有的属性和方法都是属性window的。</li>
+<li>所有定义在全局作用域中的变量、函数都会变成window对象的属性和方法</li>
+<li>window对象下的属性和方法调用的时候可以省略window</li>
 </ol>
-<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><blockquote>
-<p>在javascript中，循环语句有三种，while、do..while、for循环。</p>
+<h3 id="window-onload"><a href="#window-onload" class="headerlink" title="window.onload"></a>window.onload</h3><blockquote>
+<p>window.onload事件会在窗体加载完成后执行，通常我们称之为入口函数。</p>
 </blockquote>
-<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p><img src="/images/js/02/while.png" alt></p>
-<p>基本语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//当循环条件为true时，执行循环体，</span></span><br><span class="line"><span class="comment">//当循环条件为false时，结束循环。</span></span><br><span class="line"><span class="keyword">while</span>(循环条件)&#123;</span><br><span class="line">  <span class="comment">//循环体：需要循环执行的语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">// 里面的代码会在窗体加载完成后执行。</span></span><br><span class="line">	<span class="comment">// 窗体加载完成包括文档树的加载、还有图片、文件的加载完成。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>代码示例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算1-100之间所有数的和</span></span><br><span class="line"><span class="comment">//1. 初始化变量</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i &lt;= <span class="number">100</span>)&#123;<span class="comment">//判断条件</span></span><br><span class="line">  sum += i;<span class="comment">//循环体</span></span><br><span class="line">  i++;<span class="comment">//自增，修改循环条件（不能省略）</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure>
-
-<h2 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do..while循环"></a>do..while循环</h2><blockquote>
-<p>do..while循环和while循环非常像，二者经常可以相互替代，但是do..while的特点是不管条件成不成立，都会执行一次。</p>
+<h2 id="延时器与定时器"><a href="#延时器与定时器" class="headerlink" title="延时器与定时器"></a>延时器与定时器</h2><h3 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout"></a>setTimeout</h3><blockquote>
+<p>setTimeout延时器可以在延迟时间到期后执行一个指定的函数。</p>
 </blockquote>
-<p><img src="/images/js/02/dowhile.png" alt></p>
-<p>基础语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">  <span class="comment">//循环体;</span></span><br><span class="line">&#125;<span class="keyword">while</span>(循环条件);</span><br></pre></td></tr></table></figure>
+<p>设置延时器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法：setTimeOut(callback, time);</span></span><br><span class="line"><span class="comment">// 参数1：回调函数，时间到了就会执行。</span></span><br><span class="line"><span class="comment">// 参数2：延时的时间</span></span><br><span class="line"><span class="comment">// 返回：定时器的id，用于清除</span></span><br><span class="line"><span class="comment">// 示例：</span></span><br><span class="line"><span class="keyword">var</span> timer = setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">// 1秒后将执行的代码。</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
 
-<p>代码示例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化变量</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">  sum += i;<span class="comment">//循环体</span></span><br><span class="line">  i++;<span class="comment">//自增</span></span><br><span class="line">&#125;<span class="keyword">while</span>(i &lt;= <span class="number">100</span>);<span class="comment">//循环条件</span></span><br></pre></td></tr></table></figure>
+<p>清除延时器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法：clearTimeOut(timerId)</span></span><br><span class="line"><span class="comment">// 参数：定时器id</span></span><br><span class="line"><span class="comment">// 示例：</span></span><br><span class="line">clearTimeOut(timer);<span class="comment">// 清除上面定义的定时器</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h2><blockquote>
-<p>断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。</p>
+<h3 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval"></a>setInterval</h3><blockquote>
+<p>setInterval,方法重复调用一个函数或执行一个代码段，在每次调用之间具有固定的时间延迟。定时器除非清除，否则会一直执行下去。</p>
 </blockquote>
-<p>调试步骤：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">浏览器中按F12--&gt;sources--&gt;找到需要调试的文件--&gt;在程序的某一行设置断点</span><br></pre></td></tr></table></figure>
+<p>设置定时器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法：var intervalID = setInterval(func, delay);</span></span><br><span class="line"><span class="comment">// 参数1：重复执行的函数</span></span><br><span class="line"><span class="comment">// 参数2：每次延迟的毫秒数</span></span><br><span class="line"><span class="comment">// 返回：定时器的id，用于清除</span></span><br><span class="line"><span class="comment">// 示例：</span></span><br><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">// 重复执行的代码。</span></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
 
-<p>调试中的相关操作：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Watch:监视，通过watch可以监视变量的值的变化，非常的常用。</span><br><span class="line">F10:程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。</span><br><span class="line">F8：跳到下一个断点处，如果后面没有断点了，则程序执行结束。</span><br></pre></td></tr></table></figure>
+<p>清除定时器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法：clearInterval(intervalID)</span></span><br><span class="line"><span class="comment">// 参数：定时器id</span></span><br><span class="line"><span class="comment">// 示例：</span></span><br><span class="line">clearInterval(timer);<span class="comment">// 清除上面定义的定时器</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p><img src="/images/js/02/for.png" alt></p>
-<p>for循环语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. for循环使用分号分隔</span></span><br><span class="line"><span class="comment">//2. for循环有2个分号，两个分号不能少</span></span><br><span class="line"><span class="keyword">for</span>(初始化语句;判断语句;自增语句)&#123;</span><br><span class="line">  <span class="comment">//循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行顺序：1243  —-  243   —–243(直到循环条件变成false)</p>
-<ol>
-<li>初始化语句</li>
-<li>判断语句</li>
-<li>自增或者自减</li>
-<li>循环体</li>
-</ol>
-<p>for循环代码示例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算1-100之间所有数的和</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++)&#123;</span><br><span class="line">  sum += i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h2><blockquote>
-<p>break:立即跳出整个循环，即循环结束，开始执行循环后面的内容（直接跳到大括号）</p>
-<p>continue:立即跳出当前循环，继续下一次循环（跳到i++的地方）</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><blockquote>
+<p>location对象也是window的一个属性，location其实对应的就是浏览器中的地址栏。</p>
 </blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
-<li>循环有很多种，但是用得最多的是for循环</li>
-<li>当不明确循环次数的时候，可以使用while循环</li>
-<li>当无论如何都要执行一次代码的时候，可以使用do..while循环。</li>
-<li>循环可以相互替代。</li>
-</ol>
+<h3 id="常用属性和方法"><a href="#常用属性和方法" class="headerlink" title="常用属性和方法"></a>常用属性和方法</h3><blockquote>
+<p>location.href：控制地址栏中的地址</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.href = “http:www.baidu.com”;<span class="comment">// 让页面跳转到百度首页</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.location.search);<span class="comment">// 参数</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>location.reload()：让页面重新加载</p>
+</blockquote>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><blockquote>
+<p>window.navigator的一些属性可以获取客户端的一些信息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// navigator.userAgent：浏览器版本</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h2><p>history对象表示页面的历史</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 后退：</span></span><br><span class="line">history.back();</span><br><span class="line">history.go(<span class="number">-1</span>);</span><br><span class="line"><span class="comment">// 前进：</span></span><br><span class="line">history.forward();</span><br><span class="line">history.go(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogbloodthirsty2b.com/2018/10/02/javascript/02-if-switch-三元-循环/" data-id="cjmxfy6qn000274u87ju5r8bi" class="article-share-link">Share</a>
+      <a data-url="http://bloodthirsty2b.github.io/2019/01/11/webAPI/05-BOM-window-定时器-延时器-location-navigator-history/" data-id="ckbrnkcq4004cd4u8db4uiez3" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webAPI/">webAPI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webAPI/04-事件注册-事件对象-事件流-offset" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/06/webAPI/04-事件注册-事件对象-事件流-offset/" class="article-date">
+  <time datetime="2019-01-06T02:48:09.000Z" itemprop="datePublished">2019-01-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/webAPI/">webAPI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/06/webAPI/04-事件注册-事件对象-事件流-offset/">04-事件注册,事件对象,事件流,offset</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="注册事件的两种方式"><a href="#注册事件的两种方式" class="headerlink" title="注册事件的两种方式"></a>注册事件的两种方式</h1>
+        
+          <p class="article-more-link">
+            <a href="/2019/01/06/webAPI/04-事件注册-事件对象-事件流-offset/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/01/06/webAPI/04-事件注册-事件对象-事件流-offset/" data-id="ckbrnkcq20048d4u86aanqtf2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webAPI/">webAPI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webAPI/03-兄弟、父子节点-onkeyup-添加-添加-删除-克隆-创建节点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/03/webAPI/03-兄弟、父子节点-onkeyup-添加-添加-删除-克隆-创建节点/" class="article-date">
+  <time datetime="2019-01-03T02:38:09.000Z" itemprop="datePublished">2019-01-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/webAPI/">webAPI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/03/webAPI/03-兄弟、父子节点-onkeyup-添加-添加-删除-克隆-创建节点/">03-兄弟、父子节点,onkeyup,添加,删除,克隆,创建节点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h1>
+        
+          <p class="article-more-link">
+            <a href="/2019/01/03/webAPI/03-兄弟、父子节点-onkeyup-添加-添加-删除-克隆-创建节点/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/01/03/webAPI/03-兄弟、父子节点-onkeyup-添加-添加-删除-克隆-创建节点/" data-id="ckbrnkcq00044d4u8gl344033" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webAPI/">webAPI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-webAPI/02-a链接不跳转-innerText-js表单属性-style属性-自定义属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/27/webAPI/02-a链接不跳转-innerText-js表单属性-style属性-自定义属性/" class="article-date">
+  <time datetime="2018-12-27T02:27:59.000Z" itemprop="datePublished">2018-12-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/webAPI/">webAPI</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/27/webAPI/02-a链接不跳转-innerText-js表单属性-style属性-自定义属性/">02-innerText,js表单属性,style属性,自定义属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="标签的内容属性"><a href="#标签的内容属性" class="headerlink" title="标签的内容属性"></a>标签的内容属性</h1>
+        
+          <p class="article-more-link">
+            <a href="/2018/12/27/webAPI/02-a链接不跳转-innerText-js表单属性-style属性-自定义属性/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2018/12/27/webAPI/02-a链接不跳转-innerText-js表单属性-style属性-自定义属性/" data-id="ckbrnkcpw003wd4u8gl68rg5l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webAPI/">webAPI</a></li></ul>
 
     </footer>
   </div>
@@ -216,7 +633,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Element-ui/">Element-ui</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Vuex/">Vuex</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/RegExp/">RegExp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/webAPI/">webAPI</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plugin/">plugin</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/test/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -226,7 +643,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webAPI/">webAPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -236,7 +653,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -245,7 +662,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -258,23 +675,23 @@
       <ul>
         
           <li>
-            <a href="/2018/10/06/javascript/06-内置对象,数组方法,基本包装类型/">内置对象,数组方法,基本包装类型</a>
+            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
           </li>
         
           <li>
-            <a href="/2018/10/05/javascript/05-对象,for in循环,值类型,引用类型/">对象,for in循环,值类型,引用类型</a>
+            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/04/javascript/04-函数,作用域,预解析,沙箱模式/">函数,作用域,预解析,沙箱模式</a>
+            <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/03/javascript/03-数组-冒泡排序/">数组,冒泡排序</a>
+            <a href="/2019/11/04/plugin/jquery-fileupload的使用/">jquery-fileupload的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/02/javascript/02-if-switch-三元-循环/">if,switch,三元,循环</a>
+            <a href="/2019/11/04/plugin/前端校验插件bootstrap-validator/">前端校验插件bootstrap-validator </a>
           </li>
         
       </ul>
@@ -289,7 +706,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Bloodthirsty2B<br>
+      &copy; 2020 Bloodthirsty2B<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

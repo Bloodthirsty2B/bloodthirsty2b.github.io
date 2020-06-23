@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>函数原型链,作用域链,递归 | BS2B&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数也是对象 函数是由new Function创建出来的，因此函数也是一个对象， 所有的函数都是new Function的实例。">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数原型链,作用域链,递归">
+<meta property="og:url" content="http://bloodthirsty2b.github.io/2018/10/12/js/10-函数原型链-作用域链-递归/index.html">
+<meta property="og:site_name" content="BS2B&#39;s blog">
+<meta property="og:description" content="函数也是对象 函数是由new Function创建出来的，因此函数也是一个对象， 所有的函数都是new Function的实例。">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://bloodthirsty2b.github.io/images/js/10/function.jpg">
+<meta property="og:image" content="http://bloodthirsty2b.github.io/images/js/10/full.png">
+<meta property="og:updated_time" content="2019-10-23T01:51:54.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数原型链,作用域链,递归">
+<meta name="twitter:description" content="函数也是对象 函数是由new Function创建出来的，因此函数也是一个对象， 所有的函数都是new Function的实例。">
+<meta name="twitter:image" content="http://bloodthirsty2b.github.io/images/js/10/function.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="BS2B&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BS2B&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">YES!It worked!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bloodthirsty2b.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js/10-函数原型链-作用域链-递归" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/12/js/10-函数原型链-作用域链-递归/" class="article-date">
+  <time datetime="2018-10-12T03:32:38.000Z" itemprop="datePublished">2018-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数原型链,作用域链,递归
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="函数也是对象"><a href="#函数也是对象" class="headerlink" title="函数也是对象"></a>函数也是对象</h1><blockquote>
+<p>函数是由new Function创建出来的，因此函数也是一个对象， <code>所有的函数都是new Function的实例</code>。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="函数的原型链结构"><a href="#函数的原型链结构" class="headerlink" title="函数的原型链结构"></a>函数的原型链结构</h2><p><img src="/images/js/10/function.jpg" alt></p>
+<h3 id="Function-prototype常用成员"><a href="#Function-prototype常用成员" class="headerlink" title="Function.prototype常用成员"></a>Function.prototype常用成员</h3><ul>
+<li>call：调用函数，重新指向this</li>
+<li>apply：调用函数，重新指向this</li>
+<li>bind：重新指向this，返回一个新的函数，不调用。</li>
+</ul>
+<h3 id="完整版原型链"><a href="#完整版原型链" class="headerlink" title="完整版原型链"></a>完整版原型链</h3><p><img src="/images/js/10/full.png" alt></p>
+<p>总结：</p>
+<ol>
+<li>所有函数都是new Function创建出来的，因此<code>所有函数.__proto__</code>都是<code>Function.prototype</code></li>
+<li>所有对象都是new Object创建出来的，因此<code>所有对象.__proto__</code>都是<code>Object.prototyp</code></li>
+</ol>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><blockquote>
+<p>作用域：变量起作用的区域，也就是说：变量定义后，可以在哪个范围内使用该变量。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">11</span>;<span class="comment">//全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> num1 = <span class="number">22</span>;<span class="comment">//局部变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(num);  <span class="comment">// 全局变量在任何地方都能访问到</span></span><br><span class="line">  <span class="built_in">console</span>.log(num1);  </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
+
+<p>JS中没有块级作用域。</p>
+<p>在JS里只有函数可以形成作用域，叫做函数作用域。</p>
+<p>因为函数能够形成作用域，所以，函数内部声明的变量函数外部无法访问。</p>
+<p>函数作用域是在函数定义的时候作用域就确定下来了，和函数在哪调用无关。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">123</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">456</span>;</span><br><span class="line">  f1();</span><br><span class="line">&#125;</span><br><span class="line">f2();<span class="comment">// ?</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><blockquote>
+<p>作用域链：只要是函数，就会形成一个作用域，如果这个函数被嵌套在其他函数中，那么外部函数也有自己的作用域，这个一直往上到全局环境，就形成了一个作用域链。</p>
+</blockquote>
+<p>变量的搜索原则：</p>
+<ol>
+<li>从当前作用域开始查找是否声明了该变量，如果存在，那么就直接返回这个变量的值。</li>
+<li>如果不存在，就会往上一层作用域查询，如果存在，就返回。</li>
+<li>如果不存在，一直查询到全局作用域，如果存在，就返回。如果在全局中也没有找到该变量会报错</li>
+</ol>
+<h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><blockquote>
+<p>递归函数：函数内部直接或者间接的调用自己</p>
+</blockquote>
+<p>递归的要求：</p>
+<ol>
+<li>自己调用自己（直接或者间接）</li>
+<li>要有结束条件（出口）</li>
+</ol>
+<p>递归函数主要是化归思想，将一个复杂的问题简单化，主要用于解决数学中的一些问题居多。</p>
+<ul>
+<li>把要解决的问题，归结为已经解决的问题上。</li>
+<li>一定要考虑什么时候结束让函数结束，也就是停止递归（一定要有已知条件）</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2018/10/12/js/10-函数原型链-作用域链-递归/" data-id="ckbrnkcp10029d4u8710oqsg4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/13/js/11-闭包-正则/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          闭包,正则
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/11/js/09-函数定义的三种方法-函数调用的四种模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">函数定义的三种方法,函数调用的四种模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Element-ui/">Element-ui</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Vuex/">Vuex</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/RegExp/">RegExp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/webAPI/">webAPI</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plugin/">plugin</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/test/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webAPI/">webAPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/jquery-fileupload的使用/">jquery-fileupload的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/前端校验插件bootstrap-validator/">前端校验插件bootstrap-validator </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Bloodthirsty2B<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="BS2B&#39;s blog">
-<meta property="og:url" content="http://blogbloodthirsty2b.com/page/4/index.html">
+<meta property="og:url" content="http://bloodthirsty2b.github.io/page/4/index.html">
 <meta property="og:site_name" content="BS2B&#39;s blog">
 <meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
@@ -58,7 +58,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogbloodthirsty2b.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://bloodthirsty2b.github.io"></form>
       </div>
     </div>
   </div>
@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-javascript/03-数组-冒泡排序" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js/es6/find-findIndex" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/03/javascript/03-数组-冒泡排序/" class="article-date">
-  <time datetime="2018-10-03T03:11:01.000Z" itemprop="datePublished">2018-10-03</time>
+    <a href="/2019/11/04/js/es6/find-findIndex/" class="article-date">
+  <time datetime="2019-11-04T12:59:08.000Z" itemprop="datePublished">2019-11-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/es6/">es6</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/03/javascript/03-数组-冒泡排序/">数组,冒泡排序</a>
+      <a class="article-title" href="/2019/11/04/js/es6/find-findIndex/">;find &amp; findIndex</a>
     </h1>
   
 
@@ -92,59 +92,457 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><blockquote>
-<p>所谓数组，就是将多个元素（通常是同一类型）按一定顺序排列放到一个集合中，那么这个集合我们就称之为数组。</p>
-<p>数组：多个元素的集合，这个集合有顺序，有长度。用途是存储大量的数据。</p>
-</blockquote>
-<h2 id="数组的构成"><a href="#数组的构成" class="headerlink" title="数组的构成"></a>数组的构成</h2><blockquote>
-<p>在javascript数组是一个有序的列表，可以在数组中存放任意的数据</p>
-</blockquote>
-<p>创建数组，通过数组的构造函数可以创建一个数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//new表示新的 Array:表示数组  new Array表示创建一个数组。</span></span><br></pre></td></tr></table></figure>
+        <h1 id="find-amp-findIndex"><a href="#find-amp-findIndex" class="headerlink" title="find &amp; findIndex"></a>find &amp; findIndex</h1><h2 id="一、find"><a href="#一、find" class="headerlink" title="一、find"></a>一、find</h2><p>作用：找到数组中满足条件的第一个项，并<strong>返回这个项</strong>（满足条件的意思就是回调函数返回了true）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const arr = [</span><br><span class="line">  &#123; name: &apos;ss&apos;, id: 1 &#125;,</span><br><span class="line">  &#123; name: &apos;aa&apos;, id: 2 &#125;,</span><br><span class="line">  &#123; name: &apos;dd&apos;, id: 3 &#125;</span><br><span class="line">]</span><br><span class="line">arr.find(function (item, index, arr) &#123;</span><br><span class="line">  return item.id === 3 // 条件</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>通过数组的下标可以操作数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给数组设置值，数组中可以存放任意的值</span></span><br><span class="line"><span class="comment">//数组名[下标] = "值"    </span></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"张三"</span>;<span class="comment">//在下标0的地方存放张三</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">111</span>; <span class="comment">//在下标1的地方存放111</span></span><br><span class="line">arr[<span class="number">2</span>] = <span class="literal">true</span>; <span class="comment">//在下标2的地方存放true</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取数组中的值</span></span><br><span class="line"><span class="comment">//数组名[下标]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]);<span class="comment">//打印下标0的值</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><p>通过构造函数创建数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//创建了一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"zs"</span>,<span class="string">"ls"</span>,<span class="string">"ww"</span>);<span class="comment">//创建了一个数组，里面存放了3个字符串</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);<span class="comment">//创建了一个数组，里面存放了4个数字</span></span><br></pre></td></tr></table></figure>
-
-<p>通过数组字面量创建数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = []; <span class="comment">//创建一个空数组</span></span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>]; <span class="comment">//创建一个包含3个数值的数组，多个数组项以逗号隔开</span></span><br><span class="line"><span class="keyword">var</span> arr3 = [<span class="string">"a"</span>, <span class="string">"c"</span>]; <span class="comment">// 创建一个包含2个字符串的数组</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="数组的下标与长度"><a href="#数组的下标与长度" class="headerlink" title="数组的下标与长度"></a>数组的下标与长度</h2><p>数组的下标：数组是有序的，数组中的每一个元素都对应了一个下标，<strong>下标是从0开始的</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"zs"</span>, <span class="string">"ls"</span>, <span class="string">"ww"</span>];</span><br></pre></td></tr></table></figure>
-
-<p>数组的长度：跟字符串一样，数组有一个length属性，指数组中存放的元素的个数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"zs"</span>, <span class="string">"ls"</span>, <span class="string">"ww"</span>];</span><br><span class="line">arr.length;<span class="comment">//这个数组的长度是3</span></span><br><span class="line"><span class="comment">//空数组的长度是0</span></span><br></pre></td></tr></table></figure>
-
-<p>下标与长度的关系：最大的下标 = length - 1</p>
-<h2 id="数组的赋值与取值"><a href="#数组的赋值与取值" class="headerlink" title="数组的赋值与取值"></a>数组的赋值与取值</h2><p>数组的取值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//格式：数组名[下标]</span></span><br><span class="line"><span class="comment">//功能：获取数组对应下标的那个值，如果下标不存在，则返回undefined。</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</span><br><span class="line">arr[<span class="number">0</span>];<span class="comment">//red</span></span><br><span class="line">arr[<span class="number">2</span>];<span class="comment">//blue</span></span><br><span class="line">arr[<span class="number">3</span>];<span class="comment">//这个数组的最大下标为2,因此返回undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>数组的赋值</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//格式：数组名[下标] = 值;</span></span><br><span class="line"><span class="comment">//如果下标有对应的值，会把原来的值覆盖，如果下标不存在，会给数组新增一个元素。</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"yellow"</span>;<span class="comment">//把red替换成了yellow</span></span><br><span class="line">arr[<span class="number">3</span>] = <span class="string">"pink"</span>;<span class="comment">//给数组新增加了一个pink的值</span></span><br></pre></td></tr></table></figure>
-
-<p>思考：如何给一个数组增加新的元素？</p>
-<ul>
-<li>arr[arr.length] = 值</li>
-<li>arr.push(值)</li>
-</ul>
-<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><blockquote>
-<p>遍历：遍及所有，对数组的每一个元素都访问一次就叫遍历。</p>
-</blockquote>
-<p>数组遍历的基本语法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	<span class="comment">//数组遍历的固定结构</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断，如果一趟下来，一次交换都没有做，说明就已经排好序，就不需要继续比</span></span><br><span class="line"><span class="comment">// var arr = [1, 2, 3, 4, 5, 6, 7];</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">65</span>, <span class="number">97</span>, <span class="number">76</span>, <span class="number">13</span>, <span class="number">27</span>, <span class="number">49</span>, <span class="number">58</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tang = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> ci = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">  tang++;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">0</span>;<span class="comment">// 记录交换的次数</span></span><br><span class="line">  <span class="comment">// 思路： 两两比较，如果前面的大于后面的，交换位置</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">    ci++;</span><br><span class="line">    <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">      count++;</span><br><span class="line">      <span class="keyword">var</span> temp = arr[j];</span><br><span class="line">      arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">      arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(count);</span><br><span class="line">  <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 说明，没有进行交换</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="built_in">console</span>.log(tang, ci);</span><br></pre></td></tr></table></figure>
+<p><em>相当于对 arr 中的每一项 (item) 调用传入的函数，如果函数返回了 true ，那么跳出遍历，返回这个项</em></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/04/js/es6/find-findIndex/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blogbloodthirsty2b.com/2018/10/03/javascript/03-数组-冒泡排序/" data-id="cjmxfy6qf000174u88r10wj6q" class="article-share-link">Share</a>
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/04/js/es6/find-findIndex/" data-id="ckbrnkcrf007cd4u8t5d1dfzz" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node/05-SQL增删改查-node操作SQL" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/02/node/05-SQL增删改查-node操作SQL/" class="article-date">
+  <time datetime="2019-11-02T03:38:49.000Z" itemprop="datePublished">2019-11-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/node/">node</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/02/node/05-SQL增删改查-node操作SQL/">05-SQL增删改查,node操作SQL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据库基本操作：增删改查（SQL语法）"><a href="#数据库基本操作：增删改查（SQL语法）" class="headerlink" title="数据库基本操作：增删改查（SQL语法）"></a>数据库基本操作：增删改查（SQL语法）</h2><h3 id="1-增加数据"><a href="#1-增加数据" class="headerlink" title="1. 增加数据"></a>1. 增加数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 (键<span class="number">1</span>, 键<span class="number">2</span>, ...) <span class="keyword">values</span> (值<span class="number">1</span>, 值<span class="number">2</span>, ...);</span><br><span class="line"><span class="comment">-- 如果没有值可传，就写null</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">values</span> (值<span class="number">1</span>, 值<span class="number">2</span>, ...);</span><br><span class="line"><span class="comment">-- 必须给所有键传值，没有值就写null</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> 表名 <span class="keyword">set</span> 键<span class="number">1</span>=值<span class="number">1</span>, 键<span class="number">2</span>=值<span class="number">2</span>, 键<span class="number">3</span>=值<span class="number">3</span>, ...;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/02/node/05-SQL增删改查-node操作SQL/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/02/node/05-SQL增删改查-node操作SQL/" data-id="ckbrnkcpb002pd4u8vh3xqoth" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax/04-接口化开发-隐藏域-timeout-FormData-upload-onprogress-jsonp原理-XHR2.0-CORS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/Ajax/04-接口化开发-隐藏域-timeout-FormData-upload-onprogress-jsonp原理-XHR2.0-CORS/" class="article-date">
+  <time datetime="2019-11-01T03:10:34.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/Ajax/04-接口化开发-隐藏域-timeout-FormData-upload-onprogress-jsonp原理-XHR2.0-CORS/">05-接口化开发,art-template,隐藏域,timeout,FormData,upload,onprogress,jsonp原理,XHR2.0,CORS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="接口化开发"><a href="#接口化开发" class="headerlink" title="接口化开发"></a>接口化开发</h3><p>请求地址即所谓的接口，通常所说的接口化开发，其实是指一个接口对应一个功能， 并且严格约束了<strong>请求参数</strong> 和<strong>响应结果</strong> 的格式，这样前后端在开发过程中，可以减少不必要的讨论， 从而并行开发，可以极大的提升开发效率，另外一个好处，当网站进行改版后，服务端接口进行调整时，并不影响到前端的功能。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/Ajax/04-接口化开发-隐藏域-timeout-FormData-upload-onprogress-jsonp原理-XHR2.0-CORS/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/Ajax/04-接口化开发-隐藏域-timeout-FormData-upload-onprogress-jsonp原理-XHR2.0-CORS/" data-id="ckbrnkcqs0062d4u84yxmfkpz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax/03-XML-JSON-jquery-ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/Ajax/03-XML-JSON-jquery-ajax/" class="article-date">
+  <time datetime="2019-11-01T03:00:28.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/Ajax/03-XML-JSON-jquery-ajax/">03-AJAX,XML,JSON,jquery-ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><blockquote>
+<p>即 Asynchronous [e’sɪŋkrənəs] Javascript And XML， AJAX 不是一门的新的语言，而是对现有技术的综合利用。 本质是在HTTP协议的基础上以异步的方式与服务器进行通信。</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/Ajax/03-XML-JSON-jquery-ajax/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/Ajax/03-XML-JSON-jquery-ajax/" data-id="ckbrnkcqu0064d4u8gqqbe6v4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax/02-HTTP协议-请求响应报文-状态码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/Ajax/02-HTTP协议-请求响应报文-状态码/" class="article-date">
+  <time datetime="2019-11-01T02:49:39.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/Ajax/02-HTTP协议-请求响应报文-状态码/">02-HTTP协议,请求响应报文,状态码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h1><blockquote>
+<p>协议是指计算机通信网络中两台计算机之间进行通信所必须共同遵守的规定或规则</p>
+</blockquote>
+<blockquote>
+<p>HTTP协议，即超文本传输协议(Hypertext transfer protocol)。是一种详细规定了浏览器和服务器之间互相通信的规则，HTTP协议分为请求 和响应 两个部分组成。</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/Ajax/02-HTTP协议-请求响应报文-状态码/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/Ajax/02-HTTP协议-请求响应报文-状态码/" data-id="ckbrnkcna0007d4u85nv51xzs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Ajax/01-前后端概念-php基本语法-前后端交互get-post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/" class="article-date">
+  <time datetime="2019-11-01T02:32:00.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/">01-前后端概念,php基本语法,前后端交互get&amp;post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Ajax-前后端的交互技术"><a href="#Ajax-前后端的交互技术" class="headerlink" title="Ajax  - 前后端的交互技术"></a>Ajax  - 前后端的交互技术</h1>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/Ajax/01-前后端概念-php基本语法-前后端交互get-post/" data-id="ckbrnkcqv0066d4u8qctqqymc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JQuery/04-解绑-触发-事件对象-链式编程-end-隐式迭代-插件使用-封装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/JQuery/04-解绑-触发-事件对象-链式编程-end-隐式迭代-插件使用-封装/" class="article-date">
+  <time datetime="2019-11-01T01:57:39.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/JQuery/">JQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/JQuery/04-解绑-触发-事件对象-链式编程-end-隐式迭代-插件使用-封装/">04-解绑,触发,事件对象,链式编程,end,隐式迭代,插件使用&amp;封装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="事件解绑"><a href="#事件解绑" class="headerlink" title="事件解绑"></a>事件解绑</h1>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/JQuery/04-解绑-触发-事件对象-链式编程-end-隐式迭代-插件使用-封装/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/JQuery/04-解绑-触发-事件对象-链式编程-end-隐式迭代-插件使用-封装/" data-id="ckbrnkcoh001ed4u8nkgyljid" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JQuery/03-节点操作-val-宽高-滚动-on注册" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/JQuery/03-节点操作-val-宽高-滚动-on注册/" class="article-date">
+  <time datetime="2019-11-01T01:50:17.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/JQuery/">JQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/JQuery/03-节点操作-val-宽高-滚动-on注册/">03-节点操作,val,宽高,滚动,on注册</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jquery节点操作"><a href="#jquery节点操作" class="headerlink" title="jquery节点操作"></a>jquery节点操作</h1>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/JQuery/03-节点操作-val-宽高-滚动-on注册/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/JQuery/03-节点操作-val-宽高-滚动-on注册/" data-id="ckbrnkcoa0012d4u8jvh8tjyz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JQuery/02-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/JQuery/02-动画/" class="article-date">
+  <time datetime="2019-11-01T01:39:35.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/JQuery/">JQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/JQuery/02-动画/">动画</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jquery动画"><a href="#jquery动画" class="headerlink" title="jquery动画"></a>jquery动画</h1><blockquote>
+<p> jquery提供了三组基本动画，这些动画都是标准的、有规律的效果，jquery还提供了自定义动画的功能</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/JQuery/02-动画/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/JQuery/02-动画/" data-id="ckbrnkcod0016d4u8cdooptgp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JQuery/01-入口函数-jq对象转换-jq选择器-mouseenter-addClass-attr-prop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/01/JQuery/01-入口函数-jq对象转换-jq选择器-mouseenter-addClass-attr-prop/" class="article-date">
+  <time datetime="2019-11-01T01:13:36.000Z" itemprop="datePublished">2019-11-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/JQuery/">JQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/01/JQuery/01-入口函数-jq对象转换-jq选择器-mouseenter-addClass-attr-prop/">入口函数,jq对象转换,jq选择器,mouseenter,addClass,attr&amp;prop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h1><ol>
+<li>官方网址：<a href="http://jquery.com/" target="_blank" rel="noopener">jQuery官方网站</a></li>
+<li>jQuery是一个快速、小巧、功能丰富的JavaScript库。它使HTML文档遍历和操作、事件处理、动画和Ajax等操作变得更加简单，因为它提供了一个易于使用的API（ application programming interface ），可以跨多种浏览器工作。jQuery结合了通用性和可扩展性，改变了数百万人编写JavaScript的方式。</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2019/11/01/JQuery/01-入口函数-jq对象转换-jq选择器-mouseenter-addClass-attr-prop/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://bloodthirsty2b.github.io/2019/11/01/JQuery/01-入口函数-jq对象转换-jq选择器-mouseenter-addClass-attr-prop/" data-id="ckbrnkcqy006cd4u81mtdlx2o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 
     </footer>
   </div>
@@ -168,7 +566,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Element-ui/">Element-ui</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Vuex/">Vuex</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/RegExp/">RegExp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/webAPI/">webAPI</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/plugin/">plugin</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/test/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -178,7 +576,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webAPI/">webAPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
     </div>
   </div>
 
@@ -188,7 +586,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -197,7 +595,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -210,23 +608,23 @@
       <ul>
         
           <li>
-            <a href="/2018/10/06/javascript/06-内置对象,数组方法,基本包装类型/">内置对象,数组方法,基本包装类型</a>
+            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
           </li>
         
           <li>
-            <a href="/2018/10/05/javascript/05-对象,for in循环,值类型,引用类型/">对象,for in循环,值类型,引用类型</a>
+            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/04/javascript/04-函数,作用域,预解析,沙箱模式/">函数,作用域,预解析,沙箱模式</a>
+            <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/03/javascript/03-数组-冒泡排序/">数组,冒泡排序</a>
+            <a href="/2019/11/04/plugin/jquery-fileupload的使用/">jquery-fileupload的使用</a>
           </li>
         
           <li>
-            <a href="/2018/10/02/javascript/02-if-switch-三元-循环/">if,switch,三元,循环</a>
+            <a href="/2019/11/04/plugin/前端校验插件bootstrap-validator/">前端校验插件bootstrap-validator </a>
           </li>
         
       </ul>
@@ -241,7 +639,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 Bloodthirsty2B<br>
+      &copy; 2020 Bloodthirsty2B<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
