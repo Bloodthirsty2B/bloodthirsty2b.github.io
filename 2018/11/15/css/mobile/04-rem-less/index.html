@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>rem,less | BS2B&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为什么要用rem？ rem的主要目的就是解决用于不同屏幕的适配问题。rem能够等比例的适配所有的屏幕。  1单纯使用流式布局的结果是宽度自适应  高度是写死的  导致不能完全适配设计图(因为不同的屏幕大小下 高度永远是写死的), 而使用rem就可以让高度也保持自适应效果">
+<meta name="keywords" content="css,mobile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rem,less">
+<meta property="og:url" content="http://blogbloodthirsty2b.com/2018/11/15/css/mobile/04-rem-less/index.html">
+<meta property="og:site_name" content="BS2B&#39;s blog">
+<meta property="og:description" content="为什么要用rem？ rem的主要目的就是解决用于不同屏幕的适配问题。rem能够等比例的适配所有的屏幕。  1单纯使用流式布局的结果是宽度自适应  高度是写死的  导致不能完全适配设计图(因为不同的屏幕大小下 高度永远是写死的), 而使用rem就可以让高度也保持自适应效果">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-11-15T15:41:57.129Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rem,less">
+<meta name="twitter:description" content="为什么要用rem？ rem的主要目的就是解决用于不同屏幕的适配问题。rem能够等比例的适配所有的屏幕。  1单纯使用流式布局的结果是宽度自适应  高度是写死的  导致不能完全适配设计图(因为不同的屏幕大小下 高度永远是写死的), 而使用rem就可以让高度也保持自适应效果">
+  
+    <link rel="alternate" href="/atom.xml" title="BS2B&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BS2B&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">YES!It worked!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogbloodthirsty2b.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css/mobile/04-rem-less" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/15/css/mobile/04-rem-less/" class="article-date">
+  <time datetime="2018-11-15T12:34:50.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>►<a class="article-category-link" href="/categories/css/mobile/">mobile</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      rem,less
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="为什么要用rem？"><a href="#为什么要用rem？" class="headerlink" title="为什么要用rem？"></a>为什么要用rem？</h2><blockquote>
+<p>rem的主要目的就是解决用于不同屏幕的适配问题。rem能够等比例的适配所有的屏幕。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">单纯使用流式布局的结果是宽度自适应  高度是写死的  导致不能完全适配设计图(因为不同的屏幕大小下 高度永远是写死的), 而使用rem就可以让高度也保持自适应效果</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<ul>
+<li>流式布局：虽然可以让各种屏幕都适配，但是显示效果不是很好，因为只有几个尺寸的手机能够完美的显示出来视觉设计师和交互最想要的效果。但是目前使用流式布局的公司非常多，比如 <a href="https://www.amazon.cn/" target="_blank" rel="noopener">亚马逊</a> 、<a href="https://m.jd.com/" target="_blank" rel="noopener">京东</a> 、<a href="https://m.ctrip.com/" target="_blank" rel="noopener">携程</a></li>
+<li>rem布局：rem能够适配所有的屏幕，与less配合使用效果会更好。目前使用rem布局的有：<a href="https://m.taobao.com" target="_blank" rel="noopener">淘宝</a> 、 <a href="https://m.suning.com/" target="_blank" rel="noopener">苏宁</a></li>
+</ul>
+<h2 id="rem是什么？"><a href="#rem是什么？" class="headerlink" title="rem是什么？"></a>rem是什么？</h2><blockquote>
+<p> <code>rem</code>（font size of the root element）是指相对于<code>根元素</code>的字体大小的单位。它是一个相对单位。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">既然是一个单位, 而px也是一个单位   所以但凡是使用px的地方都可以使用rem来代替  而rem单位的大小永远参照的是html的font-size值   1rem = html的font-size的大小</span><br><span class="line"></span><br><span class="line">特点: 一旦<span class="selector-tag">html</span>的<span class="selector-tag">font-size</span>发生了改变  那么<span class="selector-tag">rem</span>的大小也会发生改变</span><br></pre></td></tr></table></figure>
+
+<h2 id="rem与高度自适应"><a href="#rem与高度自适应" class="headerlink" title="rem与高度自适应"></a>rem与高度自适应</h2><p>因为rem的基准点是根元素html的字体大小，因此我们只需要设置不同屏幕的html的font-size大小不一样就可以达到不同屏幕的适配了。 </p>
+<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><blockquote>
+<p>媒体查询（Media Query）是CSS3提出来的一个新的属性，通过媒体查询可以查询到screen的宽度，从而指定某个宽度区间的网页布局。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">根据不同的屏幕大小去加载不同的css样式</span><br><span class="line"></span><br><span class="line">语法说明:</span><br><span class="line"></span><br><span class="line">media screen (条件) &#123;</span><br><span class="line">    满足条件加载的css内容</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 条件说明</span><br><span class="line">1. min-width: 320px =&gt;  最小宽为320 (320以上的设备)</span><br><span class="line">2. max-width: 640px =&gt;  最大宽为640 (640以下的设备)</span><br><span class="line">3. width: 540px     =&gt;  宽度等于540</span><br><span class="line"></span><br><span class="line">and连接符 =&gt; 可以查询多个多个条件</span><br></pre></td></tr></table></figure>
+
+<h2 id="rem与媒体查询"><a href="#rem与媒体查询" class="headerlink" title="rem与媒体查询"></a>rem与媒体查询</h2><p>使用rem配合媒体查询可以适配多个终端</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">需求：基于750的设计图自定义 <span class="selector-tag">html</span>的<span class="selector-tag">font-size</span>为50 ,里面得到的盒子的大小为100<span class="selector-tag">px</span> 100<span class="selector-tag">px</span> 改写成<span class="selector-tag">rem</span> 可以实现在主流手机里面宽高自适应 </span><br><span class="line">主流手机机型：320 360 375 384 400 414 424 480 540 720 750</span><br><span class="line"></span><br><span class="line">px转换成rem的公式: px/html的font-size值 </span><br><span class="line">动态计算不同屏幕对应的html的font-size值公式:  当前屏幕/(设计图的宽 / 基于这个设计图的html的fontsize)</span><br></pre></td></tr></table></figure>
+
+<h1 id="LESS"><a href="#LESS" class="headerlink" title="LESS"></a>LESS</h1><h2 id="Less简介"><a href="#Less简介" class="headerlink" title="Less简介"></a>Less简介</h2><blockquote>
+<p><strong><em>Less</em> 是一门 CSS 预处理语言,它扩展了 CSS 语言,增加了变量、Mixin、函数等特性。</strong> </p>
+<p>浏览器不直接识别less文件，浏览器只识别css文件，所以我们写了less文件之后，我们需要预先把less文件转换成css文件。</p>
+</blockquote>
+<p>本质上，LESS 包含一套自定义的语法及一个解析器，用户根据这些语法定义自己的样式规则，这些规则最终会通过解析器，编译生成对应的 CSS 文件。LESS 并没有裁剪 CSS 原有的特性，更不是用来取代 CSS 的，而是在现有 CSS 语法的基础上，为 CSS 加入程序式语言的特性。</p>
+<p><strong>less仅仅是写css的另一种方式，写出来的less文件浏览器也不识别。所以，写完了less文件，还需要通过less解析器解析成css，最终浏览器引入的还是css文件。</strong></p>
+<p><a href="http://lesscss.org/" target="_blank" rel="noopener">官网</a><br><a href="http://lesscss.cn/" target="_blank" rel="noopener">中文网</a></p>
+<h2 id="less的编译"><a href="#less的编译" class="headerlink" title="less的编译"></a>less的编译</h2><blockquote>
+<p>如何把less文件变成css文件</p>
+</blockquote>
+<ol>
+<li>安装easy less插件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">和前面的内容需要使用 ,</span><br><span class="line"><span class="string">"less.compile"</span>: &#123;</span><br><span class="line">  <span class="string">"out"</span>: <span class="string">"../css/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用webpack打包的时候用less-loader处理</li>
+</ol>
+<h2 id="Less语法"><a href="#Less语法" class="headerlink" title="Less语法"></a>Less语法</h2><h3 id="less初体验"><a href="#less初体验" class="headerlink" title="less初体验"></a>less初体验</h3><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*这个注释是CSS中的注释，因此会编译到css中*/</span></span><br><span class="line"><span class="comment">//这个注释,CSS中用不了，因此不会编译出来。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a><strong>变量</strong></h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@wjs_color:</span><span class="number">#e92322</span>;</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="variable">@wjs_color</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="variable">@wjs_color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><blockquote>
+<p>我们可以在一个选择器中嵌套另一个选择器来实现继承，这样很大程度减少了代码量，并且代码看起来更加的清晰。</p>
+</blockquote>
+<ul>
+<li>使用伪类的时候 可以使用<code>&amp;</code> 表示父选择器</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> <span class="string">"UTF-8"</span>;</span><br><span class="line"><span class="selector-class">.wjs_header</span> &#123;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wjs_header</span> <span class="selector-class">.header_item</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wjs_header</span> <span class="selector-class">.header_item</span><span class="selector-pseudo">:first-child</span> &#123;</span><br><span class="line">  <span class="attribute">border-left</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="less数学运算"><a href="#less数学运算" class="headerlink" title="less数学运算"></a>less数学运算</h3><blockquote>
+<p>在我们的 CSS 中充斥着大量的数值型的 value，less可以直接支持运算，也提供了一系列的函数提供给我们使用。</p>
+</blockquote>
+<h3 id="less函数"><a href="#less函数" class="headerlink" title="less函数"></a>less函数</h3><p>函数：可以重复使用</p>
+<p>不带参数的函数</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> <span class="string">"UTF-8"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不会被编译</span></span><br><span class="line"><span class="selector-class">.btn</span>() &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ccc</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.my_btn</span> &#123;</span><br><span class="line">  <span class="selector-class">.btn</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>带参数的函数</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.btn_border</span>(<span class="variable">@width</span>) &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="variable">@width</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.my_btn</span> &#123;</span><br><span class="line">  <span class="comment">//如果函数定义了参数，调用的时候必须传入参数，否则会报错</span></span><br><span class="line">  <span class="selector-class">.btn_border</span>();</span><br><span class="line">  <span class="comment">//传入参数，就不会报错</span></span><br><span class="line">  <span class="selector-class">.btn_border</span>(<span class="number">10px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js中函数的默认值设置方法是等号，不要混淆</span></span><br><span class="line"><span class="selector-class">.btn_border</span>(<span class="variable">@width</span>:<span class="number">1px</span>) &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="variable">@width</span> solid <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.my_btn</span> &#123;</span><br><span class="line">  <span class="comment">//因为有默认值，所以不会报错</span></span><br><span class="line">  <span class="selector-class">.btn_border</span>();</span><br><span class="line">  <span class="comment">//传入参数，会覆盖1px，也不会报错</span></span><br><span class="line">  <span class="selector-class">.btn_border</span>(<span class="number">10px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blogbloodthirsty2b.com/2018/11/15/css/mobile/04-rem-less/" data-id="cjmsi06sa001fhwu8rpfea8lp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mobile/">mobile</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/22/JQuery/JQuery部分源码解读/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JQuery部分源码解读
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/06/css/mobile/03-flex布局-响应式布局-bootstrap简要/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">flex布局,响应式布局,bootstrap简要</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mobile/" style="font-size: 15px;">mobile</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/22/JQuery/JQuery部分源码解读/">JQuery部分源码解读</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/15/css/mobile/04-rem-less/">rem,less</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/06/css/mobile/03-flex布局-响应式布局-bootstrap简要/">flex布局,响应式布局,bootstrap简要</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/05/css/mobile/02-过渡-动画-私有前缀-视口-流式布局/">过渡,动画,私有前缀,视口,流式布局</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/13/javascript/11-闭包-正则/">闭包,正则</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Bloodthirsty2B<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

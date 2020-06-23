@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>面向对象,对象构建,原型,原型链 | BS2B&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="面向对象编程基本概念对象到底是什么，可以从两次层次来理解。">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象,对象构建,原型,原型链">
+<meta property="og:url" content="http://blogbloodthirsty2b.com/2018/10/09/javascript/07-面向对象-对象构建-原型-原型链/index.html">
+<meta property="og:site_name" content="BS2B&#39;s blog">
+<meta property="og:description" content="面向对象编程基本概念对象到底是什么，可以从两次层次来理解。">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://blogbloodthirsty2b.com/images/js/07/%E5%8E%9F%E5%9E%8B%E4%B8%89%E8%A7%92%E5%85%B3%E7%B3%BB.jpg">
+<meta property="og:image" content="http://blogbloodthirsty2b.com/images/js/07/sanjiao.png">
+<meta property="og:image" content="http://blogbloodthirsty2b.com/images/js/07/proto.png">
+<meta property="og:updated_time" content="2018-10-10T02:51:26.783Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象,对象构建,原型,原型链">
+<meta name="twitter:description" content="面向对象编程基本概念对象到底是什么，可以从两次层次来理解。">
+<meta name="twitter:image" content="http://blogbloodthirsty2b.com/images/js/07/%E5%8E%9F%E5%9E%8B%E4%B8%89%E8%A7%92%E5%85%B3%E7%B3%BB.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="BS2B&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BS2B&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">YES!It worked!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blogbloodthirsty2b.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javascript/07-面向对象-对象构建-原型-原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/09/javascript/07-面向对象-对象构建-原型-原型链/" class="article-date">
+  <time datetime="2018-10-09T02:34:59.000Z" itemprop="datePublished">2018-10-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象,对象构建,原型,原型链
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>对象到底是什么，可以从两次层次来理解。</p>
+<a id="more"></a>
+
+<p><strong>(1) 对象是具体事物的抽象。</strong></p>
+<p>一本书、一辆汽车、一个人都可以是对象，当实物被抽象成对象，实物之间的关系就变成了对象之间的关系，从而就可以模拟现实情况，针对对象进行编程。</p>
+<p><strong>(2) 对象是无序键值对的集合，其属性可以包含基本值、对象或者函数</strong></p>
+<p>每个对象都是基于一个引用类型创建的，这些类型可以是系统内置的原生类型，也可以是开发人员自定义的类型。</p>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p>面向对象编程 —— Object Oriented Programming，简称 OOP ，是一种编程开发思想。</p>
+<p>在面向对象程序开发思想中，每一个对象都是功能中心，具有明确分工，可以完成接受信息、处理数据、发出信息等任务。<br>因此，面向对象编程具有灵活、代码可复用、高度模块化等特点，容易维护和开发，比起由一系列函数或指令组成的传统的过程式编程（procedural programming），更适合多人合作的大型软件项目。</p>
+<p>面向对象与面向过程：</p>
+<ul>
+<li>面向过程就是亲历亲为，事无巨细，有条不紊，面向过程是解决问题的一种思维方式，（执行者的角度）<ul>
+<li>关注点在于解决问题的过程（先xx，然后xx，在xx）；</li>
+</ul>
+</li>
+<li>面向对象就是找一个对象，让它去做这件事情（指挥者的角度）<ul>
+<li>关注点在找到能解决问题的对象上。</li>
+</ul>
+</li>
+<li>面向对象不是面向过程的替代，而是面向过程的封装</li>
+</ul>
+<p>面向对象的特性：</p>
+<ul>
+<li>封装性<ul>
+<li>将功能的具体实现，全部封装到对象的内部，外界使用对象时，只需要关注对象提供的方法如何使用，而不需要关心对象的内部具体实现，这就是封装。</li>
+</ul>
+</li>
+<li>继承性<ul>
+<li>在js中，继承的概念很简单，一个对象没有的一些属性和方法，另外一个对象有，拿过来用，就实现了继承。</li>
+<li><strong>注意：在其他语言里面，继承是类与类之间的关系，在js中，是对象与对象之间的关系。</strong></li>
+</ul>
+</li>
+<li>[多态性]<ul>
+<li>多态是在强类型的语言中才有的。js是弱类型语言，所以JS不支持多态</li>
+</ul>
+</li>
+</ul>
+<h2 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h2><h3 id="内置构造函数创建"><a href="#内置构造函数创建" class="headerlink" title="内置构造函数创建"></a>内置构造函数创建</h3><p>可以直接通过 <code>new Object()</code> 创建：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在js中，对象有动态特性，可以随时的给一个对象增加属性或者删除属性。</span></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">person.name = <span class="string">'Jack'</span></span><br><span class="line">person.age = <span class="number">18</span></span><br><span class="line"></span><br><span class="line">person.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>缺点：麻烦，每个属性都需要添加。</p>
+<h3 id="对象字面量创建"><a href="#对象字面量创建" class="headerlink" title="对象字面量创建"></a>对象字面量创建</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jack'</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>缺点：如果要批量生成多个对象，代码很冗余</p>
+<h3 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h3><p>可以写一个函数，解决代码重复问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    name: name,</span><br><span class="line">    age: age,</span><br><span class="line">    sayName: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后生成实例对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p1 = createPerson(<span class="string">'Jack'</span>, <span class="number">18</span>)</span><br><span class="line"><span class="keyword">var</span> p2 = createPerson(<span class="string">'Mike'</span>, <span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>缺点：但却没有解决对象识别的问题，创建出来的对象都是Object类型的。</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p>构造函数是一个函数，用于实例化对象，需要配合new操作符使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>, <span class="number">18</span>)</span><br><span class="line">p1.sayName() <span class="comment">// =&gt; Jack</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'Mike'</span>, <span class="number">23</span>)</span><br><span class="line">p2.sayName() <span class="comment">// =&gt; Mike</span></span><br></pre></td></tr></table></figure>
+
+<p>而要创建 <code>Person</code> 实例，则必须使用 <code>new</code> 操作符。<br>以这种方式调用构造函数会经历以下 4 个步骤：</p>
+<ol>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给新对象（因此 this 就指向了这个新对象）</li>
+<li>执行构造函数中的代码</li>
+<li>返回新对象</li>
+</ol>
+<p><strong>构造函数需要配合new操作符使用才有意义，构造函数首字母都应该大写</strong></p>
+<h3 id="构造函数的缺点"><a href="#构造函数的缺点" class="headerlink" title="构造函数的缺点"></a>构造函数的缺点</h3><p>使用构造函数带来的最大的好处就是创建对象更方便了，但是其本身也存在一个浪费内存的问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'human'</span></span><br><span class="line">  <span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello '</span> + <span class="keyword">this</span>.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'lpz'</span>, <span class="number">18</span>)</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>, <span class="number">16</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p1.sayHello === p2.sayHello) <span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure>
+
+<p>解决方案：将方法提取到外面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello '</span> + <span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'human'</span></span><br><span class="line">  <span class="keyword">this</span>.sayHello = sayHello</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'lpz'</span>, <span class="number">18</span>)</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">'Jack'</span>, <span class="number">16</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p1.sayHello === p2.sayHello) <span class="comment">// =&gt; true</span></span><br></pre></td></tr></table></figure>
+
+<p>缺点：会暴漏很多的函数，容易造成全局变量污染。</p>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="原型基本概念"><a href="#原型基本概念" class="headerlink" title="原型基本概念"></a>原型基本概念</h3><p>Javascript 规定，每一个函数都有一个 <code>prototype</code> 属性，指向另一个对象。<br>这个对象的所有属性和方法，都会被构造函数的实例继承。</p>
+<p>这也就意味着，我们可以把所有对象实例需要共享的属性和方法直接定义在 <code>prototype</code> 对象上。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name</span><br><span class="line">  <span class="keyword">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype)</span><br><span class="line"></span><br><span class="line">Person.prototype.type = <span class="string">'human'</span></span><br><span class="line"></span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(...)</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(...)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p1.sayName === p2.sayName) <span class="comment">// =&gt; true</span></span><br></pre></td></tr></table></figure>
+
+<p>这时所有实例的 <code>type</code> 属性和 <code>sayName()</code> 方法，其实都是同一个内存地址</p>
+<h3 id="构造函数、实例、原型三者之间的关系"><a href="#构造函数、实例、原型三者之间的关系" class="headerlink" title="构造函数、实例、原型三者之间的关系"></a>构造函数、实例、原型三者之间的关系</h3><p>构造函数：构造函数就是一个函数，配合new可以新建对象。</p>
+<p>实例：通过构造函数实例化出来的对象我们把它叫做构造函数的实例。一个构造函数可以有很多实例。</p>
+<p>原型：每一个构造函数都有一个属性<code>prototype</code>，函数的prototype属性值就是原型。通过构造函数创建出来的实例能够直接使用原型上的属性和方法。</p>
+<p><img src="/images/js/07/%E5%8E%9F%E5%9E%8B%E4%B8%89%E8%A7%92%E5%85%B3%E7%B3%BB.jpg" alt></p>
+<p>思考：内置对象中，有很多的方法，这些方法存在哪里？</p>
+<h3 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a><code>__proto__</code></h3><p>任意一个对象，都会有<code>__proto__</code>属性，这个属性指向了构造函数的prototype属性，也就是原型对象。</p>
+<p>获取原型对象：</p>
+<ul>
+<li>通过<code>构造函数.prototype</code>可以获取</li>
+<li>通过<code>实例.__proto__</code>可以获取（隐式原型）</li>
+<li>它们指向了同一个对象<code>构造函数.prototype === 实例.__proto__</code></li>
+</ul>
+<p><strong>注意：<code>__proto__</code>是浏览器的一个隐藏（私有）属性，IE浏览器不支持，不要通过它来修改原型里的内容，如果要修改原型中的内容，使用构造函数.prototype去修改</strong></p>
+<h3 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h3><p>默认情况下，原型对象中只包含了一个属性：constructor，constructor属性指向了当前的构造函数。</p>
+<p><img src="/images/js/07/sanjiao.png" alt></p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="原型链概念"><a href="#原型链概念" class="headerlink" title="原型链概念"></a>原型链概念</h3><p>任何一个对象，都有原型对象，原型对象本身又是一个对象，所以原型对象也有自己的原型对象，这样一环扣一环就形成了一个链式结构，我们把这个链式结构称为：原型链。</p>
+<p>*<em>Object.prototype是原型链的尽头，Object.prototype的原型是null *</em></p>
+<p><img src="/images/js/07/proto.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blogbloodthirsty2b.com/2018/10/09/javascript/07-面向对象-对象构建-原型-原型链/" data-id="cjmsi06re000jhwu8lir1uyoq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/09/javascript/08-对象属性查找-设置-hasOwnProperty-继承/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          对象属性查找&amp;设置,hasOwnProperty,继承
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/10/06/javascript/06-内置对象,数组方法,基本包装类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">内置对象,数组方法,基本包装类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JQuery/" style="font-size: 10px;">JQuery</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mobile/" style="font-size: 15px;">mobile</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/22/JQuery/JQuery部分源码解读/">JQuery部分源码解读</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/15/css/mobile/04-rem-less/">rem,less</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/06/css/mobile/03-flex布局-响应式布局-bootstrap简要/">flex布局,响应式布局,bootstrap简要</a>
+          </li>
+        
+          <li>
+            <a href="/2018/11/05/css/mobile/02-过渡-动画-私有前缀-视口-流式布局/">过渡,动画,私有前缀,视口,流式布局</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/13/javascript/11-闭包-正则/">闭包,正则</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Bloodthirsty2B<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
