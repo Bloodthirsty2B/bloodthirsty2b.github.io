@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>自定义组件 | BS2B&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="自定义组件文档：https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ 一、创建自定义组件 在根目录中新建文件夹components/组件名/ 创建好文件夹后可以在微信开发者工具中快速新建组件需要的各个文件。     在需要引入该组件的页面的文件夹中打开对应json，引入需要的组件(这里是Tabs组件">
+<meta name="keywords" content="miniProgram">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义组件">
+<meta property="og:url" content="https://bloodthirsty2b.github.io/2020/06/27/miniProgram/自定义组件/index.html">
+<meta property="og:site_name" content="BS2B&#39;s blog">
+<meta property="og:description" content="自定义组件文档：https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ 一、创建自定义组件 在根目录中新建文件夹components/组件名/ 创建好文件夹后可以在微信开发者工具中快速新建组件需要的各个文件。     在需要引入该组件的页面的文件夹中打开对应json，引入需要的组件(这里是Tabs组件">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2020-06-27T13:30:05.651Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义组件">
+<meta name="twitter:description" content="自定义组件文档：https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ 一、创建自定义组件 在根目录中新建文件夹components/组件名/ 创建好文件夹后可以在微信开发者工具中快速新建组件需要的各个文件。     在需要引入该组件的页面的文件夹中打开对应json，引入需要的组件(这里是Tabs组件">
+  
+    <link rel="alternate" href="/atom.xml" title="BS2B&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">BS2B&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">YES!It worked!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://bloodthirsty2b.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-miniProgram/自定义组件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/27/miniProgram/自定义组件/" class="article-date">
+  <time datetime="2020-06-27T10:22:53.000Z" itemprop="datePublished">2020-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/miniProgram/">miniProgram</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      自定义组件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h1><p>文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/</a></p>
+<h2 id="一、创建自定义组件"><a href="#一、创建自定义组件" class="headerlink" title="一、创建自定义组件"></a>一、创建自定义组件</h2><ol>
+<li>在根目录中新建文件夹<code>components/组件名/</code></li>
+<li>创建好文件夹后可以在微信开发者工具中快速新建组件需要的各个文件。</li>
+</ol>
+
+
+<ol start="3">
+<li><p>在需要引入该组件的页面的文件夹中打开对应json，引入需要的组件(这里是Tabs组件)：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"usingComponents"</span>: &#123;</span><br><span class="line">    <span class="attr">"Tabs"</span>: <span class="string">"../../components/Tabs/Tabs"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在页面的wxml中使用组件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Tabs</span>&gt;</span><span class="tag">&lt;/<span class="name">Tabs</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<a id="more"></a>
+
+
+
+<h2 id="二、组件的特点"><a href="#二、组件的特点" class="headerlink" title="二、组件的特点"></a>二、组件的特点</h2><h3 id="组件与普通页面方法编写的位置差别："><a href="#组件与普通页面方法编写的位置差别：" class="headerlink" title="组件与普通页面方法编写的位置差别："></a>组件与普通页面方法编写的位置差别：</h3><ul>
+<li>在普通页面中方法书写的位置与data、onload等成员同层级</li>
+<li>而在组件中，方法必须写在methods对象中</li>
+</ul>
+<h2 id="三、数据父传子"><a href="#三、数据父传子" class="headerlink" title="三、数据父传子"></a>三、数据父传子</h2><h3 id="父组件向子组件传递数据：父组件通过标签的attributes写入数据，子组件通过properties接收数据。"><a href="#父组件向子组件传递数据：父组件通过标签的attributes写入数据，子组件通过properties接收数据。" class="headerlink" title="父组件向子组件传递数据：父组件通过标签的attributes写入数据，子组件通过properties接收数据。"></a>父组件向子组件传递数据：父组件通过标签的attributes写入数据，子组件通过properties接收数据。</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Tabs</span> <span class="attr">str</span>=<span class="string">"这是一个字符串"</span>&gt;</span><span class="tag">&lt;/<span class="name">Tabs</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子组件.js</span></span><br><span class="line">Component(&#123;</span><br><span class="line">    properties: &#123;</span><br><span class="line">        str: &#123;</span><br><span class="line">            type: <span class="built_in">String</span>, <span class="comment">// 这里要写清楚数据类型</span></span><br><span class="line">            value: <span class="string">'这里还没有数据'</span> <span class="comment">// 默认值，没有传入数据的话使用这个值</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        handleEventSon () &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.data.str) <span class="comment">// 数据会直接复制一份到data中，改变数据不会影响父组件</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>wxml中使用数据的时候直接写变量名就好：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子组件.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">bindtap</span>=<span class="string">"handleEventSon"</span>&gt;</span>&#123;&#123;str&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：在子组件中用<code>setData</code>方法改变父组件传入的properties数据<strong>不会影响</strong>到父组件中的数据！！！需要通过子传父把数据返回给父组件。</p>
+<h2 id="四、数据子传父"><a href="#四、数据子传父" class="headerlink" title="四、数据子传父"></a>四、数据子传父</h2><h3 id="子组件向父组件传递数据：子组件触发父组件中给子组件标签上注册的自定义事件，并传入需要传递的数据"><a href="#子组件向父组件传递数据：子组件触发父组件中给子组件标签上注册的自定义事件，并传入需要传递的数据" class="headerlink" title="子组件向父组件传递数据：子组件触发父组件中给子组件标签上注册的自定义事件，并传入需要传递的数据"></a>子组件向父组件传递数据：子组件触发父组件中给子组件标签上注册的自定义事件，并传入需要传递的数据</h3><p>子组件通过<code>this.triggerEvent</code>方法来触发自定义事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子组件.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">data-newstr</span>=<span class="string">"新字符串"</span> <span class="attr">bindtap</span>=<span class="string">"handleEventSon"</span>&gt;</span>&#123;&#123;str&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 子组件.js</span></span><br><span class="line">Component(&#123;</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        handleEventSon (e) &#123;</span><br><span class="line">            <span class="keyword">const</span> &#123;newStr&#125; = e.currentTarget.dataset</span><br><span class="line">            <span class="keyword">this</span>.triggerEvent(<span class="string">'eventdad'</span>, newStr)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Tabs</span> <span class="attr">str</span>=<span class="string">"&#123;&#123;str&#125;&#125;"</span> <span class="attr">bindeventdad</span>=<span class="string">"handleEventDad"</span>&gt;</span><span class="tag">&lt;/<span class="name">Tabs</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件.js</span></span><br><span class="line">page(&#123;</span><br><span class="line">    data: &#123;</span><br><span class="line">        str: <span class="string">'这是一个字符串'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    handleEventDad (e) &#123;</span><br><span class="line">        <span class="keyword">const</span> newStr = e.detail</span><br><span class="line">        <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">            str: newStr</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、插槽"><a href="#五、插槽" class="headerlink" title="五、插槽"></a>五、插槽</h2><p>父组件使用了子组件后，可以在双标签中编写其他内容，这些内容最后会替换掉子组件中的<code>slot</code>标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件.wxml  这里使用了block标签来包裹内容，相当于templete标签 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Tabs</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">block</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">view</span>&gt;</span>这是插槽内容，将会替换子组件中的slot标签<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Tabs</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子组件.wxml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span>这是子组件中其他内容<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>这是子组件中其他内容<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="六、组件Component函数常用参数"><a href="#六、组件Component函数常用参数" class="headerlink" title="六、组件Component函数常用参数"></a>六、组件Component函数常用参数</h2><p>属性：</p>
+<ol>
+<li>properties: 组件接收的数据</li>
+<li>data: 组件自身数据</li>
+<li>observers: 里面的方法可以用来监听数据(<strong>组件独有属性</strong>，页面中不存在)</li>
+<li>methods: 组件自身的方法</li>
+</ol>
+<p>生命周期钩子函数：</p>
+<ol>
+<li>created: 组件刚刚被创建时执行，此时不能调用<code>setData</code>方法</li>
+<li>attached: 组件插入页面节点树时执行，这时才能调用<code>setData</code>方法</li>
+<li>ready: 组件布局完成后执行</li>
+<li>moved: 组件被移动到节点树其他位置时执行</li>
+<li>detached: 组件被从节点树中移除时执行</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/27/miniProgram/自定义组件/" data-id="ckbxomd920026tku8cxvn8jzn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/26/miniProgram/微信小程序标签/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信小程序标签</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/">Vue</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Element-ui/">Element-ui</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue/Vuex/">Vuex</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css/mobile/">mobile</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/js/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/RegExp/">RegExp</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/es6/">es6</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/node/">node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/nodejs/">nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/webAPI/">webAPI</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/miniProgram/">miniProgram</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/plugin/">plugin</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/test/Git/">Git</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element-ui/">Element-ui</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JQuery/">JQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RegExp/">RegExp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/miniProgram/">miniProgram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mobile/">mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webAPI/">webAPI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 14.29px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15.71px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.57px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15.71px;">css</a> <a href="/tags/es6/" style="font-size: 18.57px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 11.43px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 14.29px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15.71px;">plugin</a> <a href="/tags/test/" style="font-size: 12.86px;">test</a> <a href="/tags/webAPI/" style="font-size: 17.14px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/27/miniProgram/自定义组件/">自定义组件</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/26/miniProgram/微信小程序标签/">微信小程序标签</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Bloodthirsty2B<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

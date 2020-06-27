@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="BS2B&#39;s blog">
 <meta property="og:description" content="微信小程序常见标签使用一、view标签&amp;amp;text标签view标签： 长按展示不同样式： &amp;lt;view hover-class=&amp;quot;classhover&amp;quot;&amp;gt;&amp;lt;/view&amp;gt;  阻止冒泡：&amp;lt;view hover-stop-propagation=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/view&amp;gt; 文档：https://develope">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2020-06-27T08:32:44.927Z">
+<meta property="og:updated_time" content="2020-06-27T11:08:27.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序标签">
 <meta name="twitter:description" content="微信小程序常见标签使用一、view标签&amp;amp;text标签view标签： 长按展示不同样式： &amp;lt;view hover-class=&amp;quot;classhover&amp;quot;&amp;gt;&amp;lt;/view&amp;gt;  阻止冒泡：&amp;lt;view hover-stop-propagation=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/view&amp;gt; 文档：https://develope">
@@ -113,24 +113,27 @@
 
 
 
-<h2 id="二、image标签"><a href="#二、image标签" class="headerlink" title="二、image标签"></a>二、image标签</h2><p>因为项目大小不能超过2M，image一般引用网上文件</p>
+<h2 id="二、image标签"><a href="#二、image标签" class="headerlink" title="二、image标签"></a>二、image标签</h2><p>因为项目大小不能超过2M，image一般引用网上文件，image标签有默认的宽高320 * 240，按需要手动调整</p>
 <ol>
-<li><code>src</code> 指定要加载的图片路径(图片有默认的宽高320 * 240) </li>
-<li><code>mode</code> 决定图片的宽高模式(图片默认宽高居中显示)<ol>
+<li><code>src</code> 指定要加载的图片路径</li>
+<li><code>mode</code> 决定图片的宽高模式(图片默认宽高居中显示)<ul>
 <li><code>scaleToFill</code> 不保持纵横比缩放图片，使图片的宽高完全撑满image标签</li>
 <li><code>aspectFit</code> 保持纵横比，保证图片长边能完全放在容器中，不一定撑满image标签</li>
 <li><code>aspectFill</code> 保持纵横比，保证图片短边能完全放在容器中，图片很可能显示不完全</li>
 <li><code>widthFix</code> 保持纵横比，image宽度指定后高度自适应(直接无视css设置的高度)</li>
 <li><code>top</code>、<code>buttom</code>、<code>left</code> … 不缩放图片，放在image标签中的指定位置</li>
-</ol>
+</ul>
 </li>
 <li><code>lazy-load</code> 小程序中默认支持懒加载(image标签若判断自己处于视口上下3屏高度内就开始加载)</li>
 </ol>
 <p>文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/image.html</a></p>
-<h2 id="三、swiper标签"><a href="#三、swiper标签" class="headerlink" title="三、swiper标签"></a>三、swiper标签</h2><pre><code>1. 轮播图外层容器为`&lt;swiper&gt;&lt;/swiper&gt;` ，内层装的图片容器为`&lt;swiper-item&gt;&lt;/swiper-item&gt;`
-2. 默认样式：宽100%，高150px。
-3. image标签默认宽高无法自适应`swiper-item`，且无法撑开`swiper-item`(绝对定位导致)
-4. 一般通过原图宽高计算，给`swiper`定高度：`swiper`宽高比 = 原图宽高比(可使用css中calc方法)</code></pre><h3 id="常用attributes："><a href="#常用attributes：" class="headerlink" title="常用attributes："></a>常用attributes：</h3><ol>
+<h2 id="三、swiper标签"><a href="#三、swiper标签" class="headerlink" title="三、swiper标签"></a>三、swiper标签</h2><ol>
+<li>轮播图外层容器为<code>&lt;swiper&gt;&lt;/swiper&gt;</code> ，内层装的图片容器为<code>&lt;swiper-item&gt;&lt;/swiper-item&gt;</code></li>
+<li>默认样式：宽100%，高150px。</li>
+<li>image标签默认宽高无法自适应<code>swiper-item</code>，且无法撑开<code>swiper-item</code></li>
+<li>一般通过原图宽高计算，给<code>swiper</code>定高度→<code>swiper</code>宽高比 = 原图宽高比(可使用css中calc方法)</li>
+</ol>
+<h3 id="常用attributes："><a href="#常用attributes：" class="headerlink" title="常用attributes："></a>常用attributes：</h3><ol>
 <li><code>indicator-dots</code> 是否显示轮播指示点</li>
 <li><code>indicator-color=&quot;rgb(0, 0, 0, .3)&quot;</code> 指示点颜色(支持16进制)</li>
 <li><code>indicator-active-color=&quot;#000&quot;</code> 当前选中指示点颜色</li>
@@ -215,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2020/06/26/miniProgram/微信小程序标签/" data-id="ckbxf3q270033l4u8flh54wj2" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/26/miniProgram/微信小程序标签/" data-id="ckbxomd94002atku85kpm5vah" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
@@ -225,6 +228,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/06/27/miniProgram/自定义组件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          自定义组件
+        
+      </div>
+    </a>
   
   
     <a href="/2019/11/04/webpack的基本配置/" id="article-nav-older" class="article-nav-link-wrap">
@@ -265,7 +277,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 10px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+      <a href="/tags/Ajax/" style="font-size: 14.29px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15.71px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.57px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15.71px;">css</a> <a href="/tags/es6/" style="font-size: 18.57px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 11.43px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 14.29px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 12.86px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15.71px;">plugin</a> <a href="/tags/test/" style="font-size: 12.86px;">test</a> <a href="/tags/webAPI/" style="font-size: 17.14px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -287,6 +299,10 @@
       <ul>
         
           <li>
+            <a href="/2020/06/27/miniProgram/自定义组件/">自定义组件</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/26/miniProgram/微信小程序标签/">微信小程序标签</a>
           </li>
         
@@ -300,10 +316,6 @@
         
           <li>
             <a href="/2019/11/04/plugin/json-server的使用/">json-server的使用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/plugin/jquery-fileupload的使用/">jquery-fileupload的使用</a>
           </li>
         
       </ul>
