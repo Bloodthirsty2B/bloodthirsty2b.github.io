@@ -5,20 +5,22 @@
   
 
   
-  <title>Axios的使用 | BS2B&#39;s blog</title>
+  <title>页面、应用生命周期 | BS2B&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。  vue自身没有提供发送ajax请求的工具 Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。   Promise based HTTP client for the browser and node.js 以Promise为基础的HTTP客户">
-<meta name="keywords" content="plugin">
+  <meta name="description" content="一、应用钩子函数 在app.js中App方法中编写   onLaunch 在页面第一次启动时触发，只会触发一次，可用来获取用户信息等数据。 onShow 在页面切换到前台时触发，一定会在onLaunch后触发。可以重置数据或页面效果。 onHide 在页面隐藏到后台时触发。可以取消设置的定时器等。 onError 当应用报错时触发。可以从方法中获取错误参数。 onPageNotFound 当应用第">
+<meta name="keywords" content="miniProgram">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Axios的使用">
-<meta property="og:url" content="https://bloodthirsty2b.github.io/2019/11/04/plugin/Axios的使用/index.html">
+<meta property="og:title" content="页面、应用生命周期">
+<meta property="og:url" content="https://bloodthirsty2b.github.io/2020/06/28/miniProgram/页面、应用生命周期/index.html">
 <meta property="og:site_name" content="BS2B&#39;s blog">
-<meta property="og:description" content="Axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。  vue自身没有提供发送ajax请求的工具 Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。   Promise based HTTP client for the browser and node.js 以Promise为基础的HTTP客户">
+<meta property="og:description" content="一、应用钩子函数 在app.js中App方法中编写   onLaunch 在页面第一次启动时触发，只会触发一次，可用来获取用户信息等数据。 onShow 在页面切换到前台时触发，一定会在onLaunch后触发。可以重置数据或页面效果。 onHide 在页面隐藏到后台时触发。可以取消设置的定时器等。 onError 当应用报错时触发。可以从方法中获取错误参数。 onPageNotFound 当应用第">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-11-04T14:18:39.372Z">
+<meta property="og:image" content="https://bloodthirsty2b.github.io/images/miniProgram/%E9%A1%B5%E9%9D%A2%E3%80%81%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/page-lifecycle.jpg">
+<meta property="og:updated_time" content="2020-06-28T05:08:45.889Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Axios的使用">
-<meta name="twitter:description" content="Axios Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。  vue自身没有提供发送ajax请求的工具 Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。   Promise based HTTP client for the browser and node.js 以Promise为基础的HTTP客户">
+<meta name="twitter:title" content="页面、应用生命周期">
+<meta name="twitter:description" content="一、应用钩子函数 在app.js中App方法中编写   onLaunch 在页面第一次启动时触发，只会触发一次，可用来获取用户信息等数据。 onShow 在页面切换到前台时触发，一定会在onLaunch后触发。可以重置数据或页面效果。 onHide 在页面隐藏到后台时触发。可以取消设置的定时器等。 onError 当应用报错时触发。可以从方法中获取错误参数。 onPageNotFound 当应用第">
+<meta name="twitter:image" content="https://bloodthirsty2b.github.io/images/miniProgram/%E9%A1%B5%E9%9D%A2%E3%80%81%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/page-lifecycle.jpg">
   
     <link rel="alternate" href="/atom.xml" title="BS2B&#39;s blog" type="application/atom+xml">
   
@@ -69,14 +71,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-plugin/Axios的使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-miniProgram/页面、应用生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/04/plugin/Axios的使用/" class="article-date">
-  <time datetime="2019-11-04T14:17:56.000Z" itemprop="datePublished">2019-11-04</time>
+    <a href="/2020/06/28/miniProgram/页面、应用生命周期/" class="article-date">
+  <time datetime="2020-06-28T04:29:35.000Z" itemprop="datePublished">2020-06-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/plugin/">plugin</a>
+    <a class="article-category-link" href="/categories/miniProgram/">miniProgram</a>
   </div>
 
   </div>
@@ -87,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Axios的使用
+      页面、应用生命周期
     </h1>
   
 
@@ -95,31 +97,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h1><blockquote>
-<p>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。</p>
+        <h2 id="一、应用钩子函数"><a href="#一、应用钩子函数" class="headerlink" title="一、应用钩子函数"></a>一、应用钩子函数</h2><blockquote>
+<p>在app.js中App方法中编写</p>
 </blockquote>
-<p>vue自身没有提供发送ajax请求的工具</p>
-<p>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。 </p>
-<ul>
-<li>Promise based HTTP client for the browser and node.js<ul>
-<li>以Promise为基础的HTTP客户端，适用于：浏览器和node.js</li>
-<li>封装ajax，用来发送请求，异步获取数据</li>
-</ul>
-</li>
-<li>安装：<code>npm i -S axios</code></li>
-<li><a href>axios github</a></li>
-</ul>
-<p>使用方法：</p>
-<a id="more"></a>
+<ol>
+<li><code>onLaunch</code> 在页面第一次启动时触发，只会触发一次，可用来获取用户信息等数据。</li>
+<li><code>onShow</code> 在页面切换到前台时触发，一定会在<code>onLaunch</code>后触发。可以重置数据或页面效果。</li>
+<li><code>onHide</code> 在页面隐藏到后台时触发。可以取消设置的定时器等。</li>
+<li><code>onError</code> 当应用报错时触发。可以从方法中获取错误参数。</li>
+<li><code>onPageNotFound</code> 当应用第一次启动，找不到入口页面时触发。可以在发生事件时跳转到其他页面（比如404）。</li>
+</ol>
+<h2 id="二、页面钩子函数"><a href="#二、页面钩子函数" class="headerlink" title="二、页面钩子函数"></a>二、页面钩子函数</h2><a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">    method: 请求方式,</span><br><span class="line">    url: 请求地址,</span><br><span class="line">    data: 请求体中的请求参数,</span><br><span class="line">    params: 请求行中的请求参数,</span><br><span class="line">&#125;).then(function(response) &#123;</span><br><span class="line">	// 在这里获得请求成功后的响应内容</span><br><span class="line">    console.log(response)</span><br><span class="line">    // 这里this指向window，在vue中应该使用箭头函数</span><br><span class="line">    console.log(this)</span><br><span class="line">&#125;).catch(function(error) &#123;</span><br><span class="line">    // 在这里获得请求失败的错误信息</span><br><span class="line">    console.log(error)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>生命周期钩子函数</p>
+<ol>
+<li><code>onLoad</code> 页面刚刚加载完成时触发。第一个触发。</li>
+<li><code>onShow</code> 页面切换到前台时触发。第二个触发。</li>
+<li><code>onReady</code> 页面刚刚渲染完毕时触发。第三个触发。</li>
+<li><code>onHide</code> 页面隐藏到后台时触发。</li>
+<li><code>onUnload</code> 页面卸载时（关闭当前页面）触发。</li>
+</ol>
+</li>
+<li><p>常用功能性钩子函数</p>
+<ol>
+<li><code>onPullDownRefresh</code> 下拉刷新时触发。</li>
+<li><code>onReachBottom</code> 滚动触底时触发。</li>
+<li><code>onShareAppMessage</code> 用户转发小程序后触发。</li>
+<li><code>onPageScroll</code> 页面发生滚动时触发。</li>
+<li><code>onResize</code> 页面大小发生改变时触发（从竖屏到横屏也会触发，<code>App.json</code>或<code>页面.json</code>需要启动横竖屏切换功能：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html#在手机上启用屏幕旋转支持" target="_blank" rel="noopener">微信小程序开发文档：在手机上启用屏幕旋转功能</a>）。</li>
+<li><code>onTabItemTap</code> 当前是Tab页面，再点击同一个Tab时触发（可以用来刷新页面数据等）。</li>
+</ol>
+</li>
+</ul>
+<p><img src="/images/miniProgram/%E9%A1%B5%E9%9D%A2%E3%80%81%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/page-lifecycle.jpg" alt></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/Axios的使用/" data-id="ckbym5ipe0033k4u8ucep9g48" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/28/miniProgram/页面、应用生命周期/" data-id="ckbym5ioy0028k4u8uzm684la" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
 
     </footer>
   </div>
@@ -127,19 +146,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/11/04/plugin/前端校验插件bootstrap-validator/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          前端校验插件bootstrap-validator 
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/04/test/Git的使用/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/06/27/miniProgram/自定义组件/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Git</div>
+      <div class="article-nav-title">自定义组件</div>
     </a>
   
 </nav>
