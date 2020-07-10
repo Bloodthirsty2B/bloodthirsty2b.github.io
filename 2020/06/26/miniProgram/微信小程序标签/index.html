@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="BS2B&#39;s blog">
 <meta property="og:description" content="微信小程序常见标签使用一、view标签&amp;amp;text标签view标签： 长按展示不同样式： &amp;lt;view hover-class=&amp;quot;classhover&amp;quot;&amp;gt;&amp;lt;/view&amp;gt;  阻止冒泡：&amp;lt;view hover-stop-propagation=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/view&amp;gt; 文档：https://develope">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2020-06-27T11:08:27.361Z">
+<meta property="og:updated_time" content="2020-07-02T02:42:47.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序标签">
 <meta name="twitter:description" content="微信小程序常见标签使用一、view标签&amp;amp;text标签view标签： 长按展示不同样式： &amp;lt;view hover-class=&amp;quot;classhover&amp;quot;&amp;gt;&amp;lt;/view&amp;gt;  阻止冒泡：&amp;lt;view hover-stop-propagation=&amp;quot;true&amp;quot;&amp;gt;&amp;lt;/view&amp;gt; 文档：https://develope">
@@ -157,15 +157,29 @@
 </li>
 </ol>
 <p>文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html</a></p>
-<h2 id="五、rich-text标签"><a href="#五、rich-text标签" class="headerlink" title="五、rich-text标签"></a>五、rich-text标签</h2><p>​    类似于带有v-html指令的标签</p>
-<h3 id="常用attributes：-2"><a href="#常用attributes：-2" class="headerlink" title="常用attributes："></a>常用attributes：</h3><p><code>nodes</code> 接受一个<strong>标签字符串</strong>或<strong>对象数组</strong></p>
+<h2 id="五、rich-text标签"><a href="#五、rich-text标签" class="headerlink" title="五、rich-text标签"></a>五、rich-text标签</h2><blockquote>
+<p>用来支持和显示html代码</p>
+</blockquote>
+<h3 id="attributes："><a href="#attributes：" class="headerlink" title="attributes："></a>attributes：</h3><ol>
+<li><p><code>nodes</code> 接受一个<strong>标签字符串</strong>或<strong>对象数组</strong></p>
 <ol>
-<li><p>标签字符串：<code>&lt;div&gt;啦啦啦&lt;/div&gt;</code> （常用）</p>
+<li><p>标签字符串：<code>&lt;div&gt;啦啦啦&lt;/div&gt;</code> </p>
 </li>
 <li><p>对象数组： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">html: [</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">"div"</span>,<span class="comment">// 标签名，支持大部分标签</span></span><br><span class="line">        attrs: &#123;</span><br><span class="line">            class: "my_div",</span><br><span class="line">            style: <span class="string">"color:red;"</span></span><br><span class="line">        &#125;,<span class="comment">// 各种attributes</span></span><br><span class="line">        children: [</span><br><span class="line">            &#123;&#125;<span class="comment">// 里面可以再放类似的节点信息</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
 </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">html: [</span><br><span class="line">    &#123;</span><br><span class="line">        name: <span class="string">"div"</span>,<span class="comment">// 标签名，支持大部分标签</span></span><br><span class="line">        attrs: &#123;</span><br><span class="line">            class: "my_div",</span><br><span class="line">            style: <span class="string">"color:red;"</span></span><br><span class="line">        &#125;,<span class="comment">// 各种attributes</span></span><br><span class="line">        children: [</span><br><span class="line">            &#123;&#125;<span class="comment">// 里面可以再放类似的节点信息</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>space</code> 用来显示连续空格</p>
+</li>
+</ol>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips:"></a>tips:</h3><ol>
+<li><code>nodes</code>尽量用array，使用string的话性能会稍微下降。</li>
+<li>标签内屏蔽所有节点事件。</li>
+<li>attrs内不支持id，支持class。</li>
+<li>img标签只支持网络图片，且部分ios系统不支持webp格式。</li>
+<li>若自定义组件中使用rich-text，wxss会对rich-text内部出现的class生效。</li>
+<li>ios系统下rich-text中出现的图片可以长按提示操作，然后所有其他tap事件都会失效。解决方法是：添加<code>-webkit-touch-callout: none;</code>样式。</li>
 </ol>
 <p>文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html</a></p>
 <h2 id="六、button标签"><a href="#六、button标签" class="headerlink" title="六、button标签"></a>六、button标签</h2><p>可以自定义按钮样式，下面是默认按钮</p>
@@ -190,7 +204,7 @@
 <li><code>feedback</code> 打开意见反馈页面(需要真机)</li>
 </ol>
 <h2 id="七、icon标签"><a href="#七、icon标签" class="headerlink" title="七、icon标签"></a>七、icon标签</h2><p>​    图标标签</p>
-<h3 id="常用attributes：-3"><a href="#常用attributes：-3" class="headerlink" title="常用attributes："></a>常用attributes：</h3><ol>
+<h3 id="常用attributes：-2"><a href="#常用attributes：-2" class="headerlink" title="常用attributes："></a>常用attributes：</h3><ol>
 <li><code>type</code> 图标类型，取值(不完全)：success|success_no_circle|circle(文档未注明)|info|warn|waiting|cancel|download|search|clear</li>
 <li><code>size</code> 图标大小，取值为number/string，默认值23</li>
 <li><code>color</code> 图标颜色，取值同css的color</li>
@@ -214,11 +228,33 @@
 <li>同样可以通过<code>color</code>特性改变选中颜色</li>
 <li>同样需要父级标签<code>checkbox-group</code>配合使用</li>
 </ol>
+<h2 id="十、scroll-view标签"><a href="#十、scroll-view标签" class="headerlink" title="十、scroll-view标签"></a>十、scroll-view标签</h2><blockquote>
+<p>可滚动标签</p>
+</blockquote>
+<ol>
+<li><code>scroll-top=&quot;变量&quot;</code>显示竖直方向滚动条所在的位置，需要重置到顶部时可以将变量重置为0。</li>
+<li><code>scroll-left=&quot;变量&quot;</code>显示水平方向滚动条所在位置，同上。</li>
+</ol>
+<h2 id="十一、rich-text标签"><a href="#十一、rich-text标签" class="headerlink" title="十一、rich-text标签"></a>十一、rich-text标签</h2><blockquote>
+<p>用来支持和显示html代码</p>
+</blockquote>
+<h3 id="attributes"><a href="#attributes" class="headerlink" title="attributes:"></a>attributes:</h3><ol>
+<li><code>nodes</code> 可选值：<code>array</code> | <code>string</code> ；分别用来支持节点列表和字符串html，默认是<code>array</code>。<ul>
+<li>array内成员：<ol>
+<li><code>name</code> 标签名，只支持受信任的标签</li>
+<li><code>attrs</code> 属性</li>
+<li><code>children</code> 子节点列表</li>
+</ol>
+</li>
+</ul>
+</li>
+<li></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2020/06/26/miniProgram/微信小程序标签/" data-id="ckbym5ipe002rk4u83uhjdvq8" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/26/miniProgram/微信小程序标签/" data-id="ckcg64k96001pqsu8qszwb12o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
@@ -277,7 +313,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 11.67px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 15px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -286,7 +322,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -299,6 +335,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/05/miniProgram/支付流程/">支付流程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/miniProgram/注意事项/">注意事项</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/28/miniProgram/页面、应用生命周期/">页面、应用生命周期</a>
           </li>
         
@@ -308,14 +352,6 @@
         
           <li>
             <a href="/2020/06/26/miniProgram/微信小程序标签/">微信小程序标签</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
           </li>
         
       </ul>

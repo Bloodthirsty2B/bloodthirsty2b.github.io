@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="BS2B&#39;s blog">
 <meta property="og:description" content="将网页划分成一个个网格，可以任意组合不同的网格  grid布局语法参考 grid布局是将网页划分成一个个网格，并将其任意组合的布局方法。类似于以前的table布局。   和flex布局的区别：flex是围绕轴线进行的一系列布局方法；而grid是将容器划分为行和列进行布局，其灵活性更高。 兼容性：有较大兼容性问题，参考caniuse-grid">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-10-18T01:04:44.794Z">
+<meta property="og:updated_time" content="2020-06-28T14:40:37.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="grid布局语法参考">
 <meta name="twitter:description" content="将网页划分成一个个网格，可以任意组合不同的网格  grid布局语法参考 grid布局是将网页划分成一个个网格，并将其任意组合的布局方法。类似于以前的table布局。   和flex布局的区别：flex是围绕轴线进行的一系列布局方法；而grid是将容器划分为行和列进行布局，其灵活性更高。 兼容性：有较大兼容性问题，参考caniuse-grid">
@@ -117,16 +117,14 @@
 </li>
 </ol>
 <ol start="3">
-<li><code>grid-column-gap: 20px;</code> =&gt; 给每列之间设置20px的间距 （<code>grid-row-gap: ;</code> 用法相同）；</li>
+<li><code>column-gap: 20px;</code> =&gt; 给每列之间设置20px的间距 （<code>row-gap: ;</code> 用法相同）；</li>
 </ol>
 <ol start="4">
-<li><code>grid-gap: &lt;grid-row-gap&gt; &lt;grid-column-gap&gt;;</code> =&gt; 将<code>grid-column-gap</code>和<code>grid-row-gap</code> 合写。如果省略了第二个值，那么默认第二个值和第一个相同；<blockquote>
-<p>根据最新标准，上面三个属性名的grid-前缀已经删除，grid-column-gap和grid-row-gap写成column-gap和row-gap，grid-gap写成gap。</p>
-</blockquote>
+<li><p><code>gap: &lt;row-gap&gt; &lt;column-gap&gt;;</code> =&gt; 将<code>column-gap</code>和<code>row-gap</code> 合写。如果省略了第二个值，那么默认第二个值和第一个相同；</p>
+<p><strong>使用gap的时候会把gap的厚度加入到grid的宽高中，超过100%会导致溢出问题，可使用<code>fr</code>变通</strong></p>
 </li>
-</ol>
-<ol start="5">
-<li>grid-template-areas<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 给区域命名 */</span></span><br><span class="line">grid-template-areas: 'a b c'</span><br><span class="line">                     'd e f'</span><br><span class="line">                     'g h i';</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 用. 代替不用的区域 */</span></span><br><span class="line">grid-template-areas: 'a . c'</span><br><span class="line">                     'd . f'</span><br><span class="line">                     'g . i';</span><br></pre></td></tr></table></figure>
+<li><p>grid-template-areas</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 给区域命名 */</span></span><br><span class="line">grid-template-areas: 'a b c'</span><br><span class="line">                     'd e f'</span><br><span class="line">                     'g h i';</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 用. 代替不用的区域 */</span></span><br><span class="line">grid-template-areas: 'a . c'</span><br><span class="line">                     'd . f'</span><br><span class="line">                     'g . i';</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -168,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/10/16/css/grid布局/" data-id="ckbym5ioj0014k4u8datdfx3e" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2019/10/16/css/grid布局/" data-id="ckcg64k8t0019qsu8v8ooxf5m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
@@ -227,7 +225,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 11.67px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 15px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -236,7 +234,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -249,6 +247,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/05/miniProgram/支付流程/">支付流程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/miniProgram/注意事项/">注意事项</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/28/miniProgram/页面、应用生命周期/">页面、应用生命周期</a>
           </li>
         
@@ -258,14 +264,6 @@
         
           <li>
             <a href="/2020/06/26/miniProgram/微信小程序标签/">微信小程序标签</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
           </li>
         
       </ul>

@@ -66,6 +66,125 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-miniProgram/支付流程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/05/miniProgram/支付流程/" class="article-date">
+  <time datetime="2020-07-05T02:51:20.000Z" itemprop="datePublished">2020-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/miniProgram/">miniProgram</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/05/miniProgram/支付流程/">支付流程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、创建订单"><a href="#一、创建订单" class="headerlink" title="一、创建订单"></a>一、创建订单</h2><ol>
+<li>判断缓存中有没有token<ul>
+<li>没有的话跳转到授权页面获取</li>
+</ul>
+</li>
+<li>有token再创建订单，获取订单编号</li>
+</ol>
+<p>流程：获取用户信息(<code>getUserInfo</code>) → 获取用户登录信息(<code>wx.login</code>) → 获取token → 获取订单编号</p>
+<h2 id="二、准备预支付"><a href="#二、准备预支付" class="headerlink" title="二、准备预支付"></a>二、准备预支付</h2>
+        
+          <p class="article-more-link">
+            <a href="/2020/07/05/miniProgram/支付流程/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://bloodthirsty2b.github.io/2020/07/05/miniProgram/支付流程/" data-id="ckcg64k98001sqsu80arwxi47" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-miniProgram/注意事项" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/28/miniProgram/注意事项/" class="article-date">
+  <time datetime="2020-06-28T07:48:04.000Z" itemprop="datePublished">2020-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/miniProgram/">miniProgram</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/28/miniProgram/注意事项/">注意事项</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="微信小程序和原生web语法不同的地方-amp-小技巧"><a href="#微信小程序和原生web语法不同的地方-amp-小技巧" class="headerlink" title="微信小程序和原生web语法不同的地方&amp;小技巧"></a>微信小程序和原生web语法不同的地方&amp;小技巧</h2><h3 id="一、wxml"><a href="#一、wxml" class="headerlink" title="一、wxml"></a>一、wxml</h3><ol>
+<li><code>swiper</code> 标签存在默认宽高（100% * 150px）。</li>
+<li><code>image</code> 标签也存在默认宽高（320px * 240px），可以进行设置全局的样式<code>width: 100%;</code>和特性<code>mode=&quot;widthFIx&quot;</code>来当作普通img标签使用。</li>
+</ol>
+<h3 id="二、wxss"><a href="#二、wxss" class="headerlink" title="二、wxss"></a>二、wxss</h3><ol>
+<li><p>不支持通配符选择器（*）</p>
+</li>
+<li><p>wxss支持变量，语法（设置主题颜色）：</p>
+<ul>
+<li>定义：<code>--themeColor: #eb4450;</code></li>
+<li>使用：<code>color: var(--themeColor);</code></li>
+</ul>
+</li>
+<li><p>如果使用了less，并且使用了类似<code>calc(100vh - 70rpx)</code>的语句的话，自动生成的wxss会计算错误，变成<code>calc(30vh)</code>。想要原来的代码的话应该使用字符串：<code>~&#39;calc( 100vh - 70rpx )&#39;</code></p>
+</li>
+</ol>
+<h3 id="三、wxs"><a href="#三、wxs" class="headerlink" title="三、wxs"></a>三、wxs</h3><p>相当于页面js中分出来的模块文件</p>
+<p>需要使用<code>module.exports</code>导出模块中的数据，然后在引入wxs的wxml中使用module特性定义引入的对象名：</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/06/28/miniProgram/注意事项/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/28/miniProgram/注意事项/" data-id="ckcg64k8v001cqsu8bq8toopa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-miniProgram/页面、应用生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/06/28/miniProgram/页面、应用生命周期/" class="article-date">
@@ -111,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2020/06/28/miniProgram/页面、应用生命周期/" data-id="ckbym5ioy0028k4u8uzm684la" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/28/miniProgram/页面、应用生命周期/" data-id="ckcg64k8z001hqsu8facz2dh4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
@@ -172,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2020/06/27/miniProgram/自定义组件/" data-id="ckbym5ipe002ck4u85lkmaqgt" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/27/miniProgram/自定义组件/" data-id="ckcg64k9b001wqsu8zaqt4a03" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
@@ -232,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2020/06/26/miniProgram/微信小程序标签/" data-id="ckbym5ipe002rk4u83uhjdvq8" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2020/06/26/miniProgram/微信小程序标签/" data-id="ckcg64k96001pqsu8qszwb12o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/miniProgram/">miniProgram</a></li></ul>
@@ -283,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/webpack的基本配置/" data-id="ckbym5imd0001k4u8n1qdm9df" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/webpack的基本配置/" data-id="ckcg64k6j0001qsu8qj4buzd0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
@@ -353,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/NProgress的使用/" data-id="ckbym5ipu003fk4u85nx5izux" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/NProgress的使用/" data-id="ckcg64ka4002oqsu8p6yzxgbc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li></ul>
@@ -416,7 +535,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/json-server的使用/" data-id="ckbym5ipu003jk4u804n7hhio" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/json-server的使用/" data-id="ckcg64k9x002iqsu89pa8ebsr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li></ul>
@@ -468,7 +587,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/jquery-fileupload的使用/" data-id="ckbym5ipu003mk4u8xpxytcb8" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/jquery-fileupload的使用/" data-id="ckcg64ka2002mqsu8se5xry4j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li></ul>
@@ -523,133 +642,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/前端校验插件bootstrap-validator/" data-id="ckbym5ipu003uk4u8r14kp1xi" class="article-share-link">Share</a>
+      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/前端校验插件bootstrap-validator/" data-id="ckcg64kab002wqsu894bydtti" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-plugin/Axios的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/04/plugin/Axios的使用/" class="article-date">
-  <time datetime="2019-11-04T14:17:56.000Z" itemprop="datePublished">2019-11-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/plugin/">plugin</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/plugin/Axios的使用/">Axios的使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h1><blockquote>
-<p>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。</p>
-</blockquote>
-<p>vue自身没有提供发送ajax请求的工具</p>
-<p>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。 </p>
-<ul>
-<li>Promise based HTTP client for the browser and node.js<ul>
-<li>以Promise为基础的HTTP客户端，适用于：浏览器和node.js</li>
-<li>封装ajax，用来发送请求，异步获取数据</li>
-</ul>
-</li>
-<li>安装：<code>npm i -S axios</code></li>
-<li><a href>axios github</a></li>
-</ul>
-<p>使用方法：</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/11/04/plugin/Axios的使用/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/plugin/Axios的使用/" data-id="ckbym5ipe0033k4u8ucep9g48" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test/Git的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/11/04/test/Git的使用/" class="article-date">
-  <time datetime="2019-11-04T14:15:44.000Z" itemprop="datePublished">2019-11-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/test/">test</a>►<a class="article-category-link" href="/categories/test/Git/">Git</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/test/Git的使用/">Git</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="git基础"><a href="#git基础" class="headerlink" title="git基础"></a>git基础</h1><blockquote>
-<p>Git是一款免费、开源的<strong>分布式</strong> <strong>版本控制系统</strong> ，用于敏捷高效地处理任何或小或大的项目。</p>
-</blockquote>
-<h2 id="git的安装"><a href="#git的安装" class="headerlink" title="git的安装"></a>git的安装</h2><p><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">下载地址</a></p>
-<p>注意：</p>
-<ol>
-<li>不要安装在中文目录</li>
-<li>不要使用桌面管理软件</li>
-</ol>
-<h2 id="git三个区"><a href="#git三个区" class="headerlink" title="git三个区"></a>git三个区</h2><p>要对某个项目使用git进行管理，需要使用<code>git init</code>命令初始化git仓库<br><code>git init</code>会在当前目录生成一个隐藏文件夹 .git  不要去修改这个文件夹下的任意东西。</p>
-<p>git仓库会分成三个区（暂存区和仓库区地使用就是.git文件夹的作用）</p>
-<ul>
-<li>工作区：我们书写代码的地方，工作的目录就叫工作区。</li>
-<li>暂存区：暂时存储的区域，在git中，代码无法直接从工作区提交到仓库区，而是需要先从工作区添加到暂存区，然后才能从暂存区提交到仓库区。暂存区的目的是避免误操作。</li>
-<li>本地仓库区：将保存在暂存区域的内容永久转储到 Git 仓库中，生成版本号。生成版本号之后，就可以任何的回退到某一个具体的版本。</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2019/11/04/test/Git的使用/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://bloodthirsty2b.github.io/2019/11/04/test/Git的使用/" data-id="ckbym5itv009qk4u8te5mddwi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/test/">test</a></li></ul>
 
     </footer>
   </div>
@@ -662,7 +658,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -693,7 +689,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 11.67px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/Element-ui/" style="font-size: 10px;">Element-ui</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JQuery/" style="font-size: 15px;">JQuery</a> <a href="/tags/RegExp/" style="font-size: 10px;">RegExp</a> <a href="/tags/Vue/" style="font-size: 18.33px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/es6/" style="font-size: 18.33px;">es6</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/miniProgram/" style="font-size: 15px;">miniProgram</a> <a href="/tags/mobile/" style="font-size: 13.33px;">mobile</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 11.67px;">nodejs</a> <a href="/tags/plugin/" style="font-size: 15px;">plugin</a> <a href="/tags/test/" style="font-size: 11.67px;">test</a> <a href="/tags/webAPI/" style="font-size: 16.67px;">webAPI</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
     </div>
   </div>
 
@@ -702,7 +698,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -715,6 +711,14 @@
       <ul>
         
           <li>
+            <a href="/2020/07/05/miniProgram/支付流程/">支付流程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/28/miniProgram/注意事项/">注意事项</a>
+          </li>
+        
+          <li>
             <a href="/2020/06/28/miniProgram/页面、应用生命周期/">页面、应用生命周期</a>
           </li>
         
@@ -724,14 +728,6 @@
         
           <li>
             <a href="/2020/06/26/miniProgram/微信小程序标签/">微信小程序标签</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/webpack的基本配置/">webpack的基本配置</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/plugin/NProgress的使用/">NProgress的使用</a>
           </li>
         
       </ul>
