@@ -490,7 +490,6 @@ window.onload = function () {
     _f.innerText = '点击以播放动画'
     b.onclick = function () {
       if (!h) {
-        _f.innerText = ''
         m.classList.add('bgcChange')
         setTimeout(() => {
           _f.innerText = '点击以播放动画'
@@ -502,6 +501,7 @@ window.onload = function () {
       }
     }
     m.onanimationstart = function () {
+      _f.innerText = '重置中…'
       setTimeout(() => {
         h = !h
       }, 400);
