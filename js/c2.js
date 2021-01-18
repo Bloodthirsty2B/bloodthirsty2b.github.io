@@ -506,6 +506,12 @@ window.onload = function () {
         h = !h
       }, 400);
     }
+    m.onwebkitAnimationStart = function () {
+      _f.innerText = '重置中…'
+      setTimeout(() => {
+        h = !h
+      }, 400);
+    }
   }).catch(() => {
     _f.innerText = '加载后续图片失败'
     console.log('加载后续图片失败')
