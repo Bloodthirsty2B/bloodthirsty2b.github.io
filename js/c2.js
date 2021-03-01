@@ -491,6 +491,10 @@ window.onload = function () {
     b.onclick = function () {
       if (!h) {
         m.classList.add('bgcChange')
+        _f.innerText = '重置中…'
+        setTimeout(() => {
+          h = !h
+        }, 400);
         setTimeout(() => {
           _f.innerText = '点击以播放动画'
           m.classList.remove('bgcChange')
@@ -499,18 +503,6 @@ window.onload = function () {
         h = !h
         _f.innerText = '点击以重置动画'
       }
-    }
-    m.onanimationstart = function () {
-      _f.innerText = '重置中…'
-      setTimeout(() => {
-        h = !h
-      }, 400);
-    }
-    m.onwebkitAnimationStart = function () {
-      _f.innerText = '重置中…'
-      setTimeout(() => {
-        h = !h
-      }, 400);
     }
   }).catch(() => {
     _f.innerText = '加载后续图片失败'
